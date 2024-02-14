@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "arcanumpy"
+version = "0.1.0"
+description = "Personal selection of installable codes in Python"
+authors = ["qudsiramiz <qudsiramiz@gmail.com>"]
+license = "GPL V3"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+pandas = "^2.2.0"
+scikit-learn = "^1.4.0"
+seaborn = "^0.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
