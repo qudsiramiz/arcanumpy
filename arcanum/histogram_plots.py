@@ -1,0 +1,576 @@
+from typing import List
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from pathlib import Path
+
+
+class hist_plots:
+
+    def compute_rr(self, bb=None, gamma=-2, instab="cycl"):
+        """
+        Threshold calculation based on Verscharen and Chandran 2018
+        """
+
+        if instab == "cycl":
+            if gamma == -2:
+                a = 0.649
+                b = 0.400
+                c = 0
+            elif gamma == -3:
+                a = 0.437
+                b = 0.428
+                c = -0.003
+            elif gamma == -4:
+                a = 0.367
+                b = 0.364
+                c = 0.011
+            else:
+                print(r"Only values of $\gamma/\Omega$ = -2, -3 and -4 are supported")
+        elif instab == "mirr":
+            if gamma == -2:
+                a = 1.040
+                b = 0.633
+                c = -0.012
+            elif gamma == -3:
+                a = 0.801
+                b = 0.763
+                c = -0.063
+            elif gamma == -4:
+                a = 0.702
+                b = 0.674
+                c = -0.009
+            else:
+                print(r"Only values of $\gamma/\Omega$ = -2, -3 and -4 are supported")
+        elif instab == "fir1":
+            if gamma == -2:
+                a = -0.647
+                b = 0.583
+                c = 0.713
+            elif gamma == -3:
+                a = -0.497
+                b = 0.566
+                c = 0.543
+            elif gamma == -4:
+                a = -0.408
+                b = 0.529
+                c = 0.410
+            else:
+                print(r"Only values of $\gamma/\Omega$ = -2, -3 and -4 are supported")
+        elif instab == "fir2":
+            if gamma == -2:
+                a = -1.447
+                b = 1.000
+                c = -0.148
+            elif gamma == -3:
+                a = -1.390
+                b = 1.005
+                c = -0.111
+            elif gamma == -4:
+                a = -1.454
+                b = 1.023
+                c = -0.178
+            else:
+                print(r"Only values of $\gamma/\Omega$ = -2, -3 and -4 are supported")
+
+        return 1 + a / ((bb - c) ** b)
+
+    def get_thresh(
+        self, instab, gamma, verbose=False, parnt_drct=None, drct=None, res="hi-res"
+    ):
+
+        # Open the appropriate data files for the requested instability.  If a
+        # valid instability was not specified, abort.
+
+        if parnt_drct is None:
+            parnt_drct = "../.arcanum_data/linear_instability_data/protn"
+            # Expand the user
+            parnt_drct = Path(parnt_drct).expanduser()
+
+        if instab in ["fir1", "fir2"]:
+            ohalf = -1
+        elif instab in ["cycl", "mirr"]:
+            ohalf = +1
+        else:
+            return np.array([]), np.array([])
+
+        if drct is None:
+            if instab in ["mirr", "fir2"]:
+                drct = "0.001_4.000_0.000"
+            elif instab in ["cycl", "fir1"]:
+                drct = "0.001_4.000_0.000_00.00"
+
+        if instab in ["mirr", "fir2"] and res == "lo-res":
+            if instab == "fir2":
+                res = "hi-res"
+            new_drct = f".arcanum_data/linear_instability_data/protn/{instab}/0.001_4.000_0.000/{res}/"
+        else:
+            new_drct = f"{parnt_drct}/{instab}/{drct}/{res}/"
+
+        fl_b = open(new_drct + "out_bj.dat")
+        fl_r = open(new_drct + "out_ri.dat")
+        fl_g = open(new_drct + "out_gij.dat")
+
+        # Extract the values in the files.
+
+        arr_b = np.array([[float(val) for val in ln.split()] for ln in fl_b])
+        arr_r = np.array([[float(val) for val in ln.split()] for ln in fl_r])
+        arr_g = np.array([[float(val) for val in ln.split()] for ln in fl_g])
+
+        (n_r, n_b) = arr_g.shape
+
+        # If requested, print out the shape of the arrays.
+
+        if verbose:
+            plt.contour(arr_b, arr_r, arr_g)
+            plt.show()
+
+        # Initialize the threshold arrays.
+
+        crv_b = arr_b[0, :]
+        crv_r = np.zeros_like(crv_b)
+
+        # Extract the requested threshold level. For each beta-value, use
+        # interpolation to estimate the anisotropy-value that has a gamma
+        # value closest to the target "gamma".
+        for j in np.arange(n_b):
+
+            # If the target value "gamma" does not fall into the range of
+            # gamma-values returned for this beta-value, skip to the next
+            # beta-value.
+            if (np.amin(arr_g[:, j]) >= gamma) or (np.amax(arr_g[:, j]) <= gamma):
+
+                continue
+
+            # Search through the anisotropy-values (beginning with R = 1)
+            # until one is found with a gamma-value less than the target
+            # "gamma" and that is followed by an anisotropy-value with a
+            # gamma-value greater than the target "gamma".
+
+            # NOTE: The "for"-statement immediately below may seem a bit
+            #        odd, but it does work.  The "[::ohalf]" ensures that
+            #        the loop begins with R = 1 and moves outward.  The
+            #        "[:-1]" remove supresses the final anisotropy value.
+            for i in np.arange(n_r)[::ohalf][:-1]:
+
+                # If the gamma-value of the current anisotropy-value is
+                # less than the target "gamma" and the gamma-value of
+                # the next anisotropy-value is greater than the target
+                # "gamma", interpolate between them.
+
+                if (
+                    (arr_g[i, j] > 0.0)
+                    and (arr_g[i, j] <= gamma)
+                    and (arr_g[i + ohalf, j] >= gamma)
+                ):
+
+                    # Extract the bounding anisotropy-values and the
+                    # logs of their corresponding gamma-values.
+                    r1 = arr_r[i, j]
+                    r2 = arr_r[i + ohalf, j]
+
+                    l1 = np.log10(arr_g[i, j])
+                    l2 = np.log10(arr_g[i + ohalf, j])
+
+                    # Store the interpolated value to the threshold
+                    # array.
+                    crv_r[j] = ((np.log10(gamma) - l1) * (r2 - r1) / (l2 - l1)) + r1
+
+                    # If requested, print out the interpolation
+                    # values.
+                    # Move on to the next beta-value.
+
+                    break
+
+        # Remove elements from the threshold arrays corresponding to beta-values
+        # for which no anisotropy-value could be found.
+
+        tk = np.where(crv_r != 0)
+
+        crv_b = crv_b[tk]
+        crv_r = crv_r[tk]
+
+        #    print min(crv_b), max( crv_b), min(crv_r), max(crv_r)
+        # Return the threshold arrays.
+
+        return crv_b, crv_r
+
+    def brazil_plots(
+        self,
+        bp: List[float],
+        rp: List[float],
+        xmin: float = None,
+        xmax: float = None,
+        ymin: float = None,
+        ymax: float = None,
+        bins: List[float] = None,
+        nbins: float = None,
+        cmin: float = None,
+        norm=None,
+        cmap=None,
+        vmin=None,
+        vmax=None,
+        g_lim_1=None,
+        g_lim_2=None,
+        g_lim_3=None,
+        g_lim_4=None,
+        dir_par=None,
+        dir_per=None,
+        res="hi-res",
+        loc=1,
+        sim=None,
+        density=False,
+        plot_thresh=False,
+        plot_ver_thresh=None,
+        save_fig=True,
+        plot_show=False,
+    ):
+        """
+        The code to plot the brazil plot for any kind of data. The scale of both x- and y-axes is
+        "log", this can be changed in the line which 65 or so where "bins" is defined and setting
+        both scales of x- and y-axes to linear instead of log.
+
+        bp : ion parallel beta (type:array)
+        rp : ion anisotropy (type:array)
+        xmin : minimum value of x-axis (type:float)
+        xmax : maximum value of x-axis (type:float)
+        ymin : minimum value of y-axis (type:float)
+        ymax : maximum value of y-axis (type:float)
+        bins : x and y bins (type:array)
+        nbins : number of bins in each direction, defaults to 50 (type:float)
+        cmin : minimum value in a bin to be plotted, defaults to 10 (type:float)
+        norm : norm of the mpl.colors.LogNorm() (default value)
+        cmap : colormap, defaults to plt.cm.Blues
+        vmin : minimum value of colorbar
+        vmax : maximum value fo colorbar
+        g_lim_1 to 4 : value of instability thresholds to be plotted
+            1 => cyclotron instability
+            2 => parallel firehose instability
+            3 => mirror instability
+            4 => oblique firehose instability
+        dir_par : directory for parallel instabilities
+        dir_per : directory for oblique instabilities
+        res : resolution of thresholds to be plotted, defaults to "hi-res", other option is "lo-res"
+        loc : location of legend
+        sim : type of data, this is used while saving figure
+        density : whether to plot probabilty density or somple histogram, defaults to false
+        plot_thresh : whether to plot thresholds, defaults to false
+        save_fig : to save the figure or not, defaults to true
+        plot_show : display the plot, defaults to false
+        """
+
+        # Define all the default values
+        clabelpad = 10
+        labelsize = 18
+        ticklabelsize = 15
+        clabelsize = 15
+        ticklength = 3
+        tickwidth = 1.5
+        ticklength = 6
+        mticklength = 4
+        cticklength = 5
+        mcticklength = 4
+        labelrotation = 0
+
+        # Extract the data
+        # Anisotropy
+        rp_arr = np.array(rp)
+
+        # Beta values
+        bp_arr = np.array(bp)
+
+        if bins is None:
+            if nbins is None:
+                nbins = 50
+            bins = (
+                np.logspace(
+                    np.log10(np.nanmin(bp_arr)), np.log10(np.nanmax(bp_arr)), nbins
+                ),
+                np.logspace(
+                    np.log10(np.nanmin(rp_arr)), np.log10(np.nanmax(rp_arr)), nbins
+                ),
+            )
+
+        if cmap is None:
+            cmap = plt.cm.Blues
+
+        if cmin is None:
+            cmin = 10
+
+        (hist, ex, ey, f) = plt.hist2d(
+            bp_arr, rp_arr, bins=bins, cmin=cmin, norm=norm, cmap=cmap
+        )
+        plt.close("all")
+
+        if density:
+            n_hist = np.full((np.shape(hist)), np.nan)
+            N = np.nansum(hist)
+
+            for xx in np.arange(len(ex) - 1):
+                for yy in np.arange(len(ey) - 1):
+                    db = ex[xx + 1] - ex[xx]
+                    dr = ey[yy + 1] - ey[yy]
+                    n_hist[xx, yy] = hist[xx, yy] / (N * db * dr)
+            hist = []
+        else:
+            n_hist = hist
+
+        if None in [vmin, vmax]:
+            vmin = np.nanmin(n_hist)
+            vmax = np.nanmax(n_hist)
+
+        if None in [xmin, xmax, ymin, ymax]:
+            xmin = 0.9 * ex[0]
+            xmax = 1.2 * ex[-1]
+            ymin = 0.8 * ey[0]
+            ymax = 1.2 * ey[-1]
+
+        if norm is None:
+            norm = mpl.colors.LogNorm(vmin, vmax)
+
+        # Define the figure
+        fig = plt.figure(
+            num=None, figsize=(5, 6), dpi=200, facecolor="w", edgecolor="gray"
+        )
+        fig.subplots_adjust(
+            left=0.01, right=0.95, top=0.99, bottom=0.01, wspace=0.02, hspace=0.0
+        )
+
+        # Define the axes in the figure
+        axs1 = fig.add_subplot(1, 1, 1)
+
+        im1 = axs1.pcolormesh(
+            ex,
+            ey,
+            np.transpose(n_hist),
+            alpha=0.9,
+            shading="auto",
+            cmap=cmap,
+            norm=norm,
+        )
+
+        axs1.axhline(1, lw=1.0, c="k")
+
+        im1.axes.tick_params(
+            which="major",
+            axis="both",
+            direction="in",
+            labelbottom=True,
+            bottom=True,
+            labeltop=False,
+            top=True,
+            labelleft=True,
+            left=True,
+            labelright=False,
+            right=True,
+            width=tickwidth,
+            length=ticklength,
+            labelsize=ticklabelsize,
+            labelrotation=labelrotation,
+        )
+        im1.axes.tick_params(
+            which="minor",
+            axis="both",
+            direction="in",
+            labelbottom=False,
+            bottom=True,
+            labeltop=False,
+            top=True,
+            labelleft=False,
+            left=True,
+            labelright=False,
+            right=True,
+            width=tickwidth,
+            length=mticklength,
+            labelsize=ticklabelsize,
+            labelrotation=labelrotation,
+        )
+
+        axs_xlabel = (
+            r"$\beta_{\parallel \mathrm{p}} = 2 \mu_0 n_\mathrm{p} k_\mathrm{B}$"
+            + r"$T_{\parallel \mathrm{p}}/B^2$"
+        )
+
+        axs_ylabel = r"$R_{\mathrm{p}} = T_{\perp \mathrm{p}}/T_{\parallel \mathrm{p}}$"
+
+        axs1.set_xlabel(axs_xlabel, fontsize=labelsize)
+        axs1.set_ylabel(axs_ylabel, fontsize=labelsize)
+
+        axs1.set_xlim(xmin, xmax)
+        axs1.set_ylim(ymin, ymax)
+        axs1.set_xscale("log")
+        axs1.set_yscale("log")
+
+        # Create a new axis for colorbar
+        divider1 = make_axes_locatable(axs1)
+
+        # Define the location of the colorbar, it"s size relative to main figure and the padding
+        # between the colorbar and the figure, the orientation the colorbar
+        cax1 = divider1.append_axes("top", size="5%", pad=0.01)
+        cbar1 = plt.colorbar(
+            im1, cax=cax1, orientation="horizontal", ticks=None, fraction=0.05, pad=0.01
+        )
+
+        # Define the parameters related to the label of tickmarks and their relative positioning, color
+        # of the tickmarks, and where they appear on the colorbar
+        cax1.axes.tick_params(
+            which="major",
+            axis="x",
+            direction="in",
+            pad=0,
+            labeltop=True,
+            labelbottom=False,
+            top=True,
+            bottom=True,
+            length=cticklength,
+            labelsize=clabelsize,
+            color="k",
+        )
+        cax1.axes.tick_params(
+            which="minor",
+            axis="x",
+            direction="in",
+            pad=0,
+            labeltop=False,
+            labelbottom=False,
+            top=True,
+            bottom=True,
+            length=mcticklength,
+            labelsize=clabelsize,
+            color="k",
+        )
+
+        cbar1.ax.xaxis.set_label_position("top")
+
+        if density is True:
+            cbar_label = "Probability Density"
+        else:
+            cbar_label = r"$N$"
+
+        cbar1.set_label(cbar_label, fontsize=labelsize, labelpad=clabelpad)
+
+        if plot_thresh is True:
+            if None in [g_lim_1, g_lim_2, g_lim_3, g_lim_4]:
+                g_lim_1 = 2
+                g_lim_2 = 2
+                g_lim_3 = 2
+                g_lim_4 = 2
+
+            if None in [dir_par, dir_per]:
+                dir_par = "0.001_4.000_0.000_00.00"
+                dir_per = "0.001_4.000_0.000"
+
+            crv_b_1, crv_r_1 = self.get_thresh(
+                "cycl", 10 ** (-g_lim_1), drct=dir_par, res=res, verbose=False
+            )
+            axs1.plot(
+                crv_b_1, crv_r_1, color="k", ls="dashdot", lw=1.5, label="cyclotron"
+            )
+
+            crv_b_2, crv_r_2 = self.get_thresh(
+                "fir1", 10 ** (-g_lim_2), drct=dir_par, res=res, verbose=False
+            )
+            axs1.plot(
+                crv_b_2,
+                crv_r_2,
+                color="orange",
+                ls="dashed",
+                lw=1.5,
+                label="parallel firehose",
+            )
+
+            crv_b_3, crv_r_3 = self.get_thresh(
+                "mirr", 10 ** (-g_lim_3), drct=dir_per, res=res, verbose=False
+            )
+            axs1.plot(crv_b_3, crv_r_3, color="m", ls="dashdot", lw=1.5, label="mirror")
+
+            crv_b_4, crv_r_4 = self.get_thresh(
+                "fir2", 10 ** (-g_lim_4), drct=dir_per, res=res, verbose=False
+            )
+            axs1.plot(
+                crv_b_4,
+                crv_r_4,
+                color="r",
+                ls="dashed",
+                lw=1.5,
+                label="oblique firehose",
+            )
+
+            # Set the label colors of legend label
+            labelcolor = ["k", "orange", "m", "r"]
+            legend_handles = axs1.legend(fontsize=clabelsize, frameon=False, loc=loc)
+            for i, text in enumerate(legend_handles.get_texts()):
+                text.set_color(labelcolor[i])
+
+            # Remove ther markers from legend
+            for item in legend_handles.legendHandles:
+                item.set_visible(False)
+
+            axs1.text(
+                0.98,
+                0.05,
+                f"$\gamma/\Omega_{{cp}} = 10^{{{-g_lim_1}}}$",
+                verticalalignment="center",
+                horizontalalignment="right",
+                fontsize=clabelsize,
+                transform=axs1.transAxes,
+            )
+
+        if plot_ver_thresh is True:
+            bb = np.logspace(np.log10(xmin), np.log10(xmax), 100)
+            # rr = np.logspace(ymin, ymax, 100)
+            rr_cycl = self.compute_rr(bb=bb, gamma=-g_lim_1, instab="cycl")
+            rr_mirr = self.compute_rr(bb=bb, gamma=-g_lim_1, instab="mirr")
+            rr_fir1 = self.compute_rr(bb=bb, gamma=-g_lim_1, instab="fir1")
+            rr_fir2 = self.compute_rr(bb=bb, gamma=-g_lim_1, instab="fir2")
+
+            axs1.plot(bb, rr_cycl, color="k", ls="dashdot", lw=1.5, label="cyclotron")
+            axs1.plot(
+                bb,
+                rr_fir1,
+                color="orange",
+                ls="dashed",
+                lw=1.5,
+                label="parallel firehose",
+            )
+            axs1.plot(bb, rr_mirr, color="m", ls="dashdot", lw=1.5, label="mirror")
+            axs1.plot(
+                bb, rr_fir2, color="r", ls="dashed", lw=1.5, label="oblique firehose"
+            )
+
+            # Set the label colors of legend label
+            labelcolor = ["k", "orange", "m", "r", "b", "g", "c", "y", "m", "r"]
+            legend_handles = axs1.legend(fontsize=clabelsize, frameon=False, loc=loc)
+            for i, text in enumerate(legend_handles.get_texts()):
+                text.set_color(labelcolor[i])
+
+            # Remove ther markers from legend
+            for item in legend_handles.legendHandles:
+                item.set_visible(False)
+
+            axs1.text(
+                0.98,
+                0.05,
+                f"$\gamma/\Omega_{{cp}} = 10^{{{-g_lim_1}}}$",
+                verticalalignment="center",
+                horizontalalignment="right",
+                fontsize=clabelsize,
+                transform=axs1.transAxes,
+            )
+
+        if save_fig is True:
+            if density is True:
+                fig_name = f"figures/brazil_prob_{sim}.pdf"
+            else:
+                fig_name = f"figures/brazil_{sim}.pdf"
+            # If the directory does not exist, create it
+            Path("figures").mkdir(parents=True, exist_ok=True)
+            plt.savefig(
+                fig_name, bbox_inches="tight", pad_inches=0.05, format="pdf", dpi=300
+            )
+        if plot_show is True:
+            plt.show()
+        plt.close("all")
+
+        return (ex, ey, hist, n_hist)
