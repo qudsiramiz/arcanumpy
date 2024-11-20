@@ -12,6 +12,7 @@ class hist_plots:
     It also contains a method to calculate the probability density function of a given array.
     Name of the functions contain the following:
     - calc_pdf: calculates the probability density function of a given array
+    - joint_pdf: calculates the joint probability density function of two given arrays
     - brazil_plots: plots the brazil plot for the given data
     - get_thresh: gets the threshold values for the given data
     - compute_rr: computes the threshold values for the given data
