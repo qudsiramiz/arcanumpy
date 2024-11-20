@@ -1,11 +1,38 @@
 import urllib.request
 import urllib.error
 import warnings
-import pandas as pd
 from pathlib import Path
 
 
-class download_files_from_web:
+class get_files_from_web:
+    """
+    A class that contains methods to download files from the CDAweb website.
+
+    Methods
+    -------
+    download_files_from_cdaweb(time_range, CDA_LINK, filename, file_version, verbose, data_dir)
+        Download files from the CDAweb website within a given time range and save them to a specified
+        directory.
+
+    Examples
+    --------
+    # Example usage
+    >>> from arcanum.get_files_from_web import get_files_from_web
+    >>> import pandas as pd
+    >>> input_dict = {
+        "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],
+        "CDA_LINK": "https://cdaweb.gsfc.nasa.gov/pub/data/ulysses/plasma/swics_cdaweb/scs_m1/",
+        "filename": "uy_m1_scs_",
+        "file_version": "_v02.cdf",
+        "verbose": True,
+        "data_dir": None,
+    }
+    >>> get_files_from_web().download_files_from_cdaweb(**input_dict)
+    """
+
+    def __init__(self):
+        pass
+
     def download_files_from_cdaweb(
         self,
         time_range: list = None,
@@ -39,6 +66,22 @@ class download_files_from_web:
         Returns
         -------
         None
+
+        Examples
+        --------
+        # Example usage
+        >>> from arcanum.get_files_from_web import get_files_from_web
+        >>> import pandas as pd
+        >>> input_dict = {
+            "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],
+            "CDA_LINK": "https://cdaweb.gsfc.nasa.gov/pub/data/ulysses/plasma/swics_cdaweb/scs_m1/",
+            "filename": "uy_m1_scs_",
+            "file_version": "_v02.cdf",
+            "verbose": True,
+            "data_dir": None,
+        }
+        >>> get_files_from_web().download_files_from_cdaweb(**input_dict)
+
         """
         # Get the year, month, and day of the start and stop times
         start_time = time_range[0]
@@ -126,15 +169,3 @@ class download_files_from_web:
             if verbose:
                 print(f"Downloaded ==> \033[92m {file}\033[0m \n")
         return None
-
-
-# Example usage
-input_dict = {
-    "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],
-    "CDA_LINK": "https://cdaweb.gsfc.nasa.gov/pub/data/ulysses/plasma/swics_cdaweb/scs_m1/",
-    "filename": "uy_m1_scs_",
-    "file_version": "_v02.cdf",
-    "verbose": True,
-    "data_dir": None,
-}
-download_files_from_web().download_files_from_cdaweb(**input_dict)
