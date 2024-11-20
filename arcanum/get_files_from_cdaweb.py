@@ -122,15 +122,12 @@ def download_files_from_cdaweb(
     return None
 
 
-time_range = [pd.Timestamp("2001-01-01"), pd.Timestamp("2001-01-02")]
-time_zone = "UTC"
-verbose = True
-
-spc_df = download_files_from_cdaweb(
-    time_range=time_range,
-    verbose=verbose,
-    CDA_LINK="https://cdaweb.gsfc.nasa.gov/pub/data/ulysses/plasma/swics_cdaweb/scs_m1/",
-    filename="uy_m1_scs_",
-    file_version="_v02.cdf",
-    data_dir="../data",
-)
+input_dict = {
+    "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],
+    "CDA_LINK": "https://cdaweb.gsfc.nasa.gov/pub/data/ulysses/plasma/swics_cdaweb/scs_m1/",
+    "filename": "uy_m1_scs_",
+    "file_version": "_v02.cdf",
+    "verbose": True,
+    "data_dir": None,
+}
+spc_df = download_files_from_cdaweb(**input_dict)
