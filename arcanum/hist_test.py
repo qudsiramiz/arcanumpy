@@ -6,7 +6,7 @@ import importlib
 import histogram_plots as hp
 
 importlib.reload(hp)
-
+"""
 fnwnd = "/mnt/cephadrius/udel_research/pic/data/all_omnl_data/all_wind_data_v06.p"
 
 df = pd.read_pickle(fnwnd)
@@ -37,3 +37,10 @@ ex, ey, hist, n_hist = hp.hist_plots().brazil_plots(
     plot_show=True,
     density=True,
 )
+
+"""
+# Define a a random 1000x1 array
+x = np.random.rand(10000)
+y = np.random.rand(10000)
+# Find the pdf
+(_, _, _) = hp.hist_plots().joint_pdf(x, y, bins=100, save_fig=True)

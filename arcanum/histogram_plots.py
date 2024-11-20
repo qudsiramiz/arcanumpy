@@ -7,6 +7,18 @@ from pathlib import Path
 
 
 class hist_plots:
+    """
+    Class to plot histograms and brazil plots for the given data and thresholds respectively.
+    It also contains a method to calculate the probability density function of a given array.
+    Name of the functions contain the following:
+    - calc_pdf: calculates the probability density function of a given array
+    - brazil_plots: plots the brazil plot for the given data
+    - get_thresh: gets the threshold values for the given data
+    - compute_rr: computes the threshold values for the given data
+    """
+
+    def __init__(self):
+        pass
 
     def compute_rr(self, bb=None, gamma=-2, instab="cycl"):
         """
@@ -574,3 +586,230 @@ class hist_plots:
         plt.close("all")
 
         return (ex, ey, hist, n_hist)
+
+    def calc_pdf(
+        self,
+        input_array: np.array,
+        weight=100,
+        inc=None,
+        Normalize=False,
+        plot_pdf=False,
+        save_fig=False,
+        fig_name=None,
+    ):
+        """
+        Calculate the probability density function of a given array
+
+        Parameters
+        ----------
+        input_array : np.array
+            The array for which the pdf is to be calculated
+        weight : int, optional
+            The number of points in each bin, by default 100
+        inc : int, optional
+            The number of points to be shifted, by default None
+        Normalize : bool, optional
+            Normalize the input array by the rms value, by default False
+        plot_pdf : bool, optional
+            Plot the pdf, by default False
+        save_fig : bool, optional
+            Save the figure, by default False
+        fig_name : str, optional
+            The name of the figure, by default None
+
+        Returns
+        -------
+        np.array
+            The bins of the pdf
+        np.array
+            The pdf of the input array
+
+        Examples
+        --------
+        >>> import numpy as np
+        >>> from arcanum.histogram_plots import hist_plots
+        >>> x = np.random.rand(100000)
+        >>> bins, x_pdf = hist_plots().calc_pdf(input_array=x, inc=5000, Normalize=False, weight=100, plot_pdf=True, save_fig=True)
+        """
+        # Check is the array is to be shifted
+        if inc is not None:
+            # Find the difference between elements in the array separated by inc
+            series = input_array[inc:] - input_array[:-inc]
+        else:
+            series = input_array
+
+        if Normalize:
+            rmsval = series.std()
+            series = series / rmsval
+
+        series = series[~np.isnan(series)]
+        # Sort the series
+        series.sort()
+
+        length = int(len(series) / weight)
+
+        pdf = np.zeros(length)
+        bins = np.zeros(length)
+
+        # For each bin, take the size, divide by the max-min of that bin, then add to pdf
+        acc = 0
+        for i in range(weight, len(series), weight):
+            temp = series[i - weight : i]
+            bins[acc] = temp.mean()
+            pdf[acc] = weight / (temp.max() - temp.min())
+            acc += 1
+
+        if plot_pdf:
+            plt.figure()
+            plt.plot(bins, pdf / len(series))
+            plt.xlabel("Bins")
+            plt.ylabel("PDF")
+            if save_fig:
+                if fig_name is None:
+                    fig_name = "pdf.png"
+                plt.savefig(fig_name)
+
+        return bins, pdf / len(series)
+
+    def joint_pdf(
+        self,
+        x: np.array = None,
+        y: np.array = None,
+        bins: int = 100,
+        x_label: str = None,
+        y_label: str = None,
+        save_fig: bool = False,
+        fig_name: str = None,
+    ):
+        """
+        Calculate the joint probability density function of two given arrays
+
+        Parameters
+        ----------
+        x : np.array
+            The first array for which the pdf is to be calculated
+        y : np.array
+            The second array for which the pdf is to be calculated
+        bins : int, optional
+            The number of bins in the histogram, by default 100
+        x_label : str, optional
+            The label of the x-axis, by default None
+        y_label : str, optional
+            The label of the y-axis, by default None
+        save_fig : bool, optional
+            Save the figure, by default False
+        fig_name : str, optional
+            The name of the figure, by default None
+
+        Returns
+        -------
+        np.array
+            The histogram of the joint pdf
+        np.array
+            The x data
+        np.array
+            The y data
+
+        Examples
+        --------
+        >>> import numpy as np
+        >>> from arcanum.histogram_plots import hist_plots
+        >>> x = np.random.rand(100000)
+        >>> y = np.random.rand(100000)
+        >>> hst, x_s, y_s = hist_plots().joint_pdf(x=x, y=y, bins=100, x_label="x-axis", y_label="y-axis", save_fig=True, fig_name="joint_pdf.png")
+        """
+
+        if x is None:
+            raise ValueError("x data not provided")
+            return
+
+        if y is None:
+            raise ValueError("y data not provided")
+            return
+
+        x_s = x
+        y_s = y / np.nanstd(y)
+
+        xr = np.linspace(np.nanmin(x_s), np.nanmax(x_s), bins)
+        yr = np.linspace(np.nanmin(y_s), np.nanmax(y_s), bins)
+
+        # Plotting the histogram
+        plt.close("all")
+        fig1, axs1 = plt.subplots()
+        hst = axs1.hist2d(
+            x_s,
+            y_s,
+            bins=bins,
+            range=[[np.nanmin(x_s), np.nanmax(x_s)], [np.nanmin(y_s), np.nanmax(y_s)]],
+            norm=mpl.colors.Normalize(),
+            cmap=plt.cm.Spectral,
+        )
+
+        plt.close("all")
+
+        # Plotting the surface contour
+        X, Y = np.meshgrid(xr, yr)
+
+        fig2, axs2 = plt.subplots(constrained_layout=True)
+        # cs = axs2.contourf( X, Y, np.transpose( hst[0] ), levels=25, norm=mpl.colors.LogNorm(),cmap=plt.cm.jet, origin='lower' )
+        cs = axs2.imshow(
+            np.transpose(hst[0]),
+            extent=[np.nanmin(x_s), np.nanmax(x_s), np.nanmin(y_s), np.nanmax(y_s)],
+            norm=mpl.colors.LogNorm(),
+            cmap=plt.cm.Spectral,
+            origin="lower",
+        )
+
+        if x_label is not None:
+            axs2.set_xlabel(x_label, fontsize=20)
+        if y_label is not None:
+            axs2.set_ylabel(y_label, fontsize=20)
+        axs2.set_title(f"Joint PDF between {x_label} and {y_label}", fontsize=22)
+
+        divider = make_axes_locatable(axs2)
+
+        # Define the location of the colorbar, it's size relative to main figure
+        # and the padding between the colorbar and the figure, the orientation
+        # the colorbar
+        cax = divider.append_axes("top", size="10%", pad=0.05)
+
+        cbar = plt.colorbar(
+            cs, cax=cax, orientation="horizontal", ticks=None, fraction=0.05, pad=0.0
+        )
+
+        cbar.ax.tick_params(
+            which="both",
+            direction="in",
+            labeltop=False,
+            top=True,
+            labelbottom=False,
+            bottom=False,
+            width=1.5,
+            labelsize=20,
+            labelrotation=0,
+        )
+
+        # Define the parameters related to the label of tickmarks and their relative
+        # positioning, color of the tickmarks, and where they appear on the colorbar
+        cbar.ax.tick_params(
+            axis="x",
+            direction="in",
+            labeltop=True,
+            labelbottom=False,
+            color="b",
+            top=True,
+            bottom=False,
+        )
+
+        cbar.ax.xaxis.set_label_position("top")
+        cbar.set_label("N", fontsize=20)
+
+        if save_fig:
+            if fig_name is None:
+                fig_name = "figures/joint_pdf.png"
+                # If the directory does not exist, create it
+            Path("figures").mkdir(parents=True, exist_ok=True)
+            plt.savefig(
+                fig_name, bbox_inches="tight", pad_inches=0.05, format="png", dpi=300
+            )
+        return hst, x_s, y_s
