@@ -599,6 +599,8 @@ class hist_plots:
 
         return (ex, ey, hist, n_hist)
 
+    # TODO: Add the get_brazil_hist function and the brazil_plotting_routine_3d function
+
     def calc_pdf(
         self,
         input_array: np.array,
