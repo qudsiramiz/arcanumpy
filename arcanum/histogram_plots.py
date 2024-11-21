@@ -220,8 +220,6 @@ class hist_plots:
         bins: List[float] = None,
         nbins: float = None,
         cmin: float = None,
-        norm=None,
-        cmap=None,
         vmin=None,
         vmax=None,
         g_lim_1=None,
@@ -238,6 +236,7 @@ class hist_plots:
         plot_ver_thresh=None,
         save_fig=True,
         plot_show=False,
+        pcolormesh_kwargs=None,
     ):
         """
         The code to plot the brazil plot for any kind of data. The scale of both x- and y-axes is
@@ -253,8 +252,6 @@ class hist_plots:
         bins : x and y bins (type:array)
         nbins : number of bins in each direction, defaults to 50 (type:float)
         cmin : minimum value in a bin to be plotted, defaults to 10 (type:float)
-        norm : norm of the mpl.colors.LogNorm() (default value)
-        cmap : colormap, defaults to plt.cm.Blues
         vmin : minimum value of colorbar
         vmax : maximum value fo colorbar
         g_lim_1 to 4 : value of instability thresholds to be plotted
@@ -271,6 +268,24 @@ class hist_plots:
         plot_thresh : whether to plot thresholds, defaults to false
         save_fig : to save the figure or not, defaults to true
         plot_show : display the plot, defaults to false
+        pcolormesh_kwargs : additional arguments to be passed to pcolormesh
+
+        Returns
+        -------
+        ex : x-axis bins
+        ey : y-axis bins
+        hist : histogram of the data
+        n_hist : normalized histogram of the data
+
+        Examples
+        --------
+        >>> import numpy as np
+        >>> from arcanum.histogram_plots import hist_plots
+        >>> bp = np.random.lognormal(mean=0, sigma=2, size=10000)
+        >>> bp = np.clip(bp, 1e-3, 1e2)
+        >>> rp = np.random.lognormal(mean=0, sigma=2, size=10000)
+        >>> rp = np.clip(rp, 1e-1, 1e1)
+        >>> ex, ey, hist, n_hist = hist_plots().brazil_plots(bp=bp, rp=rp, xmin=1e-3, xmax=1e2, ymin=1e-1, ymax=1e1, cmin=0, g_lim_1=2, g_lim_2=2, g_lim_3=2, g_lim_4=2, nbins=100, dir_par="0.001_4.000_0.000_00.00", dir_per="0.001_4.000_0.000", res="hi-res", loc=1, plot_thresh=True, plot_ver_thresh=False, save_fig=True, sim="wnd", plot_show=False, density=True, pcolormesh_kwargs={"norm": "log", "cmap": "cividis_r"})
         """
 
         # Define all the default values
@@ -305,16 +320,14 @@ class hist_plots:
                 ),
             )
 
-        if cmap is None:
-            cmap = plt.cm.Blues
-
         if cmin is None:
             cmin = 10
 
-        (hist, ex, ey, f) = plt.hist2d(
-            bp_arr, rp_arr, bins=bins, cmin=cmin, norm=norm, cmap=cmap
-        )
-        plt.close("all")
+        # Get the 2D histogram
+        (hist, ex, ey) = np.histogram2d(bp_arr, rp_arr, bins=bins)
+
+        # Set all the bins with less than cmin to nan
+        hist[hist < cmin] = np.nan
 
         if density:
             n_hist = np.full((np.shape(hist)), np.nan)
@@ -339,9 +352,6 @@ class hist_plots:
             ymin = 0.8 * ey[0]
             ymax = 1.2 * ey[-1]
 
-        if norm is None:
-            norm = mpl.colors.LogNorm(vmin, vmax)
-
         # Define the figure
         fig = plt.figure(
             num=None, figsize=(5, 6), dpi=200, facecolor="w", edgecolor="gray"
@@ -359,8 +369,9 @@ class hist_plots:
             np.transpose(n_hist),
             alpha=0.9,
             shading="auto",
-            cmap=cmap,
-            norm=norm,
+            # cmap=cmap,
+            # norm=norm,
+            **(pcolormesh_kwargs if pcolormesh_kwargs else {}),
         )
 
         axs1.axhline(1, lw=1.0, c="k")
@@ -681,6 +692,8 @@ class hist_plots:
         y_label: str = None,
         save_fig: bool = False,
         fig_name: str = None,
+        joint_pdf_kwargs=None,
+        imshow_kwargs=None,
     ):
         """
         Calculate the joint probability density function of two given arrays
@@ -701,6 +714,8 @@ class hist_plots:
             Save the figure, by default False
         fig_name : str, optional
             The name of the figure, by default None
+        joint_pdf_kwargs : dict, optional
+            Additional arguments to be passed to the joint pdf plot, by default None. These keyword arguments are passed to the plt.hist2d function
 
         Returns
         -------
@@ -715,9 +730,12 @@ class hist_plots:
         --------
         >>> import numpy as np
         >>> from arcanum.histogram_plots import hist_plots
-        >>> x = np.random.rand(100000)
-        >>> y = np.random.rand(100000)
-        >>> hst, x_s, y_s = hist_plots().joint_pdf(x=x, y=y, bins=100, x_label="x-axis", y_label="y-axis", save_fig=True, fig_name="joint_pdf.png")
+        >>> x = np.random.lognormal(mean=0, sigma=2, size=100000)
+        >>> x = np.clip(x, 1e-3, 1e2)
+        >>> y = np.random.lognormal(mean=0, sigma=2, size=100000)
+        >>> y = np.clip(y, 1e-3, 1e2)
+        >>> hst, x_s, y_s = hist_plots().joint_pdf(x=x, y=y, bins=100, save_fig=True, joint_pdf_kwargs={ "bins": 1000, "cmap": "cividis_r","norm": "log",}, imshow_kwargs={
+        "cmap": "Spectral", "norm": "log", "origin": "lower",},)
         """
 
         if x is None:
@@ -728,7 +746,7 @@ class hist_plots:
             raise ValueError("y data not provided")
             return
 
-        x_s = x
+        x_s = x / np.nanstd(x)
         y_s = y / np.nanstd(y)
 
         xr = np.linspace(np.nanmin(x_s), np.nanmax(x_s), bins)
@@ -740,10 +758,8 @@ class hist_plots:
         hst = axs1.hist2d(
             x_s,
             y_s,
-            bins=bins,
             range=[[np.nanmin(x_s), np.nanmax(x_s)], [np.nanmin(y_s), np.nanmax(y_s)]],
-            norm=mpl.colors.Normalize(),
-            cmap=plt.cm.Spectral,
+            **(joint_pdf_kwargs if joint_pdf_kwargs else {}),
         )
 
         plt.close("all")
@@ -756,9 +772,10 @@ class hist_plots:
         cs = axs2.imshow(
             np.transpose(hst[0]),
             extent=[np.nanmin(x_s), np.nanmax(x_s), np.nanmin(y_s), np.nanmax(y_s)],
-            norm=mpl.colors.LogNorm(),
-            cmap=plt.cm.Spectral,
-            origin="lower",
+            # norm=mpl.colors.LogNorm(),
+            # cmap=plt.cm.Spectral,
+            # origin="lower",
+            **(imshow_kwargs if imshow_kwargs else {}),
         )
 
         if x_label is not None:
@@ -814,3 +831,205 @@ class hist_plots:
                 fig_name, bbox_inches="tight", pad_inches=0.05, format="png", dpi=300
             )
         return hst, x_s, y_s
+
+    def kde_plots(
+        self,
+        x_data: np.array = None,
+        y_data: np.array = None,
+        x_label: str = None,
+        y_label: str = None,
+        save_fig: bool = False,
+        fig_name: str = None,
+        sea_kwargs=None,
+    ):
+        """
+        The code to plot the kernel density estimate plot for any kind of data. The scale of both x-
+        and y-axes is "linear", this can be changed in the line which 65 or so where "bins" is
+        defined and setting both scales of x- and y-axes to log instead of linear.
+
+        Parameters
+        ----------
+        x_data : np.array
+            The x data for the kde plot
+        y_data : np.array
+            The y data for the kde plot
+        x_label : str
+            The label for the x-axis
+        y_label : str
+            The label for the y-axis
+        save_fig : bool
+            Whether to save the figure or not
+        sea_kwargs : dict
+            Additional arguments to be passed to the seaborn jointplot function. These keyword
+            arguments are passed to the sns.jointplot function in the seaborn library
+
+        Returns
+        -------
+        sns.axisgrid.JointGrid
+            The seaborn jointplot object
+
+        Examples
+        --------
+        >>> import numpy as np
+        >>> from arcanum.histogram_plots import hist_plots
+        >>> x = np.random.lognormal(mean=0, sigma=2, size=10000)
+        >>> x = np.clip(x, 1e-3, 1e2)
+        >>> y = np.random.lognormal(mean=0, sigma=2, size=10000)
+        >>> y = np.clip(y, 1e-1, 1e1)
+        >>> hist_plots().kde_plots(x_data=x, y_data=y, save_fig=True, sea_kwargs={ "kind": "kde", "cbar": True, "thresh": 0.05, "fill": True, "levels": 10, "log_scale": True, "hue_norm": "log", "cmap": "Blues", "height": 6, "ratio": 8, "space": 0.01, "xlim": (1e-3, 1e2), "ylim": (1e-3, 1e2), },
+            )
+        """
+
+        # Check if Seaborn is installed, if not then raise an error and return
+        try:
+            import seaborn as sns
+        except ImportError:
+            raise ImportError(
+                "Seaborn is not installed, please install it using pip install seaborn"
+            )
+            return
+
+        labelsize = 28
+        ticklabelsize = 20
+        clabelsize = 15
+        ticklength = 10
+
+        plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.1)
+
+        axs1 = sns.jointplot(
+            x=x_data,
+            y=y_data,
+            **(sea_kwargs if sea_kwargs else {}),
+        )
+
+        x0, x1 = axs1.ax_joint.get_xlim()
+        y0, y1 = axs1.ax_joint.get_ylim()
+        lims = [max(x0, y0), min(x1, y1)]
+        axs1.ax_joint.plot(lims, lims, "--r", lw=2)
+
+        pos_joint_ax = axs1.ax_joint.get_position()
+        pos_marg_x_ax = axs1.ax_marg_x.get_position()
+        axs1.ax_joint.set_position(
+            [pos_joint_ax.x0, pos_joint_ax.y0, pos_marg_x_ax.width, pos_joint_ax.height]
+        )
+        axs1.figure.axes[-1].set_position(
+            [1, pos_joint_ax.y0, 0.07, pos_joint_ax.height]
+        )
+
+        # get the current colorbar ticks
+        cbar_ticks = axs1.figure.axes[-1].get_yticks()
+        # get the maximum value of the colorbar
+        _, cbar_max = axs1.figure.axes[-1].get_ylim()
+        # change the labels (not the ticks themselves) to a percentage
+        axs1.figure.axes[-1].set_yticklabels(
+            [f"{t / cbar_max * 1:.3f}" for t in cbar_ticks], size=clabelsize
+        )
+
+        # Set the x-label at the center of the colorbar
+        axs1.figure.axes[-1].text(
+            0.5,
+            0.5,
+            "Density [%]",
+            horizontalalignment="center",
+            verticalalignment="center",
+            fontsize=clabelsize,
+            transform=axs1.figure.axes[-1].transAxes,
+            color="w",
+            rotation=270,
+        )
+
+        axs1.figure.axes[0].tick_params(
+            axis="both",
+            which="major",
+            direction="in",
+            labelbottom=True,
+            bottom=True,
+            labeltop=False,
+            top=True,
+            labelleft=True,
+            left=True,
+            labelright=False,
+            right=True,
+            width=1.5,
+            length=ticklength,
+            labelsize=ticklabelsize,
+            labelrotation=0,
+        )
+
+        axs1.figure.axes[0].tick_params(
+            axis="both",
+            which="minor",
+            direction="in",
+            labelbottom=False,
+            bottom=False,
+            left=False,
+            width=1.5,
+            length=ticklength,
+            labelsize=ticklabelsize,
+            labelrotation=0,
+        )
+
+        axs1.figure.axes[1].tick_params(
+            axis="both",
+            which="both",
+            direction="in",
+            labelbottom=False,
+            bottom=False,
+            labelleft=False,
+            left=False,
+            width=1.5,
+            length=ticklength,
+            labelsize=ticklabelsize,
+            labelrotation=0,
+        )
+
+        axs1.figure.axes[2].tick_params(
+            axis="both",
+            which="both",
+            direction="in",
+            labelbottom=False,
+            bottom=False,
+            labelleft=False,
+            left=False,
+            width=1.5,
+            length=ticklength,
+            labelsize=ticklabelsize,
+            labelrotation=0,
+        )
+
+        try:
+            axs1.figure.axes[3].tick_params(
+                axis="y",
+                which="major",
+                direction="in",
+                labelbottom=False,
+                bottom=False,
+                labelleft=False,
+                left=False,
+                labelright=True,
+                right=True,
+                width=1.5,
+                length=ticklength,
+                labelsize=clabelsize,
+                labelrotation=0,
+            )
+        except IndexError:
+            pass
+
+        axs1.set_axis_labels("x", "y", fontsize=labelsize)
+        if x_label is not None:
+            axs1.ax_joint.set_xlabel(x_label, fontsize=labelsize)
+        if y_label is not None:
+            axs1.ax_joint.set_ylabel(y_label, fontsize=labelsize)
+
+        if save_fig:
+            if fig_name is None:
+                fig_name = "figures/kdeplot.pdf"
+            else:
+                fig_name = f"figures/{fig_name}"
+            # If the directory does not exist, create it
+            Path("figures").mkdir(parents=True, exist_ok=True)
+            axs1.savefig(fig_name, format="pdf", dpi=400)
+        plt.close("all")
+        return axs1
+
