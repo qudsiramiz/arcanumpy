@@ -13,7 +13,7 @@ class hist_plots:
     Name of the functions contain the following:
     - calc_pdf: calculates the probability density function of a given array
     - joint_pdf: calculates the joint probability density function of two given arrays
-    - brazil_plots: plots the brazil plot for the given data
+    - brazil_plot_with_threshold: plots the brazil plot for the given data with thresholds
     - get_thresh: gets the threshold values for the given data
     - compute_rr: computes the threshold values for the given data
     """
@@ -209,7 +209,7 @@ class hist_plots:
 
         return crv_b, crv_r
 
-    def brazil_plots(
+    def brazil_plot_with_threshold(
         self,
         bp: List[float],
         rp: List[float],
@@ -285,7 +285,7 @@ class hist_plots:
         >>> bp = np.clip(bp, 1e-3, 1e2)
         >>> rp = np.random.lognormal(mean=0, sigma=2, size=10000)
         >>> rp = np.clip(rp, 1e-1, 1e1)
-        >>> ex, ey, hist, n_hist = hist_plots().brazil_plots(bp=bp, rp=rp, xmin=1e-3, xmax=1e2, ymin=1e-1, ymax=1e1, cmin=0, g_lim_1=2, g_lim_2=2, g_lim_3=2, g_lim_4=2, nbins=100, dir_par="0.001_4.000_0.000_00.00", dir_per="0.001_4.000_0.000", res="hi-res", loc=1, plot_thresh=True, plot_ver_thresh=False, save_fig=True, sim="wnd", plot_show=False, density=True, pcolormesh_kwargs={"norm": "log", "cmap": "cividis_r"})
+        >>> ex, ey, hist, n_hist = hist_plots().brazil_plot_with_threshold(bp=bp, rp=rp, xmin=1e-3, xmax=1e2, ymin=1e-1, ymax=1e1, cmin=0, g_lim_1=2, g_lim_2=2, g_lim_3=2, g_lim_4=2, nbins=100, dir_par="0.001_4.000_0.000_00.00", dir_per="0.001_4.000_0.000", res="hi-res", loc=1, plot_thresh=True, plot_ver_thresh=False, save_fig=True, sim="wnd", plot_show=False, density=True, pcolormesh_kwargs={"norm": "log", "cmap": "cividis_r"})
         """
 
         # Define all the default values
@@ -1032,4 +1032,3 @@ class hist_plots:
             axs1.savefig(fig_name, format="pdf", dpi=400)
         plt.close("all")
         return axs1
-
