@@ -1,4 +1,4 @@
-# lexi/__init__.py
+# arcanum/__init__.py
 
 # Import the version from your setup.py file
 from pkg_resources import get_distribution, DistributionNotFound
