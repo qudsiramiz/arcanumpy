@@ -9,12 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Create a commit and push
-        run: |
-          git add --all
-          git commit -m "Deploy updates"
-          git push origin main
-
       - name: Checkout the repository
         uses: actions/checkout@v3
 
