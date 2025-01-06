@@ -38,3 +38,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build/html
+          user_name: qudsiramiz
+          user_email: qudsiramiz@gmail.com
+          publish_branch: gh-pages
+          cname: qudsiramiz.github.io
+          commit_message: "Deploy documentation"
