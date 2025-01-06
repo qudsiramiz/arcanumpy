@@ -280,7 +280,7 @@ class hist_plots:
         Examples
         --------
         >>> import numpy as np
-        >>> from arcanum.histogram_plots import hist_plots
+        >>> from arcanumpy.histogram_plots import hist_plots
         >>> bp = np.random.lognormal(mean=0, sigma=2, size=10000)
         >>> bp = np.clip(bp, 1e-3, 1e2)
         >>> rp = np.random.lognormal(mean=0, sigma=2, size=10000)
@@ -1190,7 +1190,7 @@ class hist_plots:
         Examples
         --------
         >>> import numpy as np
-        >>> from arcanum.histogram_plots import hist_plots
+        >>> from arcanumpy.histogram_plots import hist_plots
         >>> x = np.random.rand(100000)
         >>> bins, x_pdf = hist_plots().calc_pdf(input_array=x, inc=5000, Normalize=False, weight=100, plot_pdf=True, save_fig=True)
         """
@@ -1280,7 +1280,7 @@ class hist_plots:
         Examples
         --------
         >>> import numpy as np
-        >>> from arcanum.histogram_plots import hist_plots
+        >>> from arcanumpy.histogram_plots import hist_plots
         >>> x = np.random.lognormal(mean=0, sigma=2, size=100000)
         >>> x = np.clip(x, 1e-3, 1e2)
         >>> y = np.random.lognormal(mean=0, sigma=2, size=100000)
@@ -1422,7 +1422,7 @@ class hist_plots:
         Examples
         --------
         >>> import numpy as np
-        >>> from arcanum.histogram_plots import hist_plots
+        >>> from arcanumpy.histogram_plots import hist_plots
         >>> x = np.random.lognormal(mean=0, sigma=2, size=10000)
         >>> x = np.clip(x, 1e-3, 1e2)
         >>> y = np.random.lognormal(mean=0, sigma=2, size=10000)

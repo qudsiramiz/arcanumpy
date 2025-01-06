@@ -118,8 +118,8 @@ autodoc_mock_imports = [
     "scipy",
     "cdflib",
     "jupyter",
-    "arcanum.__init__",
-    "arcanum.__version__",
+    "arcanumpy.__init__",
+    "arcanumpy.__version__",
 ]
 
 html_theme_options = {

@@ -7,7 +7,7 @@ import warnings
 import os
 import pandas as pd
 
-from arcanum import SeabornFig2Grid as sfg
+from arcanumpy import SeabornFig2Grid as sfg
 
 
 def kde_plots(

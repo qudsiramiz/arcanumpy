@@ -17,7 +17,7 @@ class get_files_from_web:
     Examples
     --------
     # Example usage
-    >>> from arcanum.get_files_from_web import get_files_from_web
+    >>> from arcanumpy.get_files_from_web import get_files_from_web
     >>> import pandas as pd
     >>> input_dict = {
         "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],
@@ -70,7 +70,7 @@ class get_files_from_web:
         Examples
         --------
         # Example usage
-        >>> from arcanum.get_files_from_web import get_files_from_web
+        >>> from arcanumpy.get_files_from_web import get_files_from_web
         >>> import pandas as pd
         >>> input_dict = {
             "time_range": [pd.Timestamp("2001-01-01 00:00"), pd.Timestamp("2001-01-03 12:00")],

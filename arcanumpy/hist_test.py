@@ -74,7 +74,7 @@ y = np.clip(y, 1e-3, 1e2)
 """
 
 """
-# from arcanum.histogram_plots import hist_plots
+# from arcanumpy.histogram_plots import hist_plots
 bp = np.random.lognormal(mean=0, sigma=2, size=100000)
 bp = np.clip(bp, 1e-3, 1e2)
 rp = np.random.lognormal(mean=0, sigma=2, size=100000)

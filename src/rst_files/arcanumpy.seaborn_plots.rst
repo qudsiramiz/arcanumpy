@@ -1,7 +1,7 @@
-arcanum.histogram\_plots module
+arcanumpy.seaborn\_plots module
 ===============================
 
-.. automodule:: arcanum.histogram_plots
+.. automodule:: arcanumpy.seaborn_plots
    :members:
    :undoc-members:
    :show-inheritance:
