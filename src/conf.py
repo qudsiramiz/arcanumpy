@@ -33,7 +33,7 @@ def get_git_versions():
         return versions
     except Exception as e:
         print(f"Error fetching Git versions: {e}")
-        return ["latest", "stable"]  # Fallback versions
+        return ["latest", "main"]  # Fallback versions
 
 
 versions = get_git_versions()
@@ -88,7 +88,7 @@ html_context = {
     "versions": versions,
     "github_user": "qudsiramiz",
     "github_repo": "arcanumpy",
-    "github_version": "stable",
+    "github_version": "main",
     "conf_py_path": "/src/",
 }
 

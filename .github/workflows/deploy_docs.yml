@@ -3,7 +3,7 @@ name: Deploy Sphinx Docs
 on:
   push:
     branches:
-      - stable  # or the branch where your code resides
+      - main  # or the branch where your code resides
 
 jobs:
   deploy:
