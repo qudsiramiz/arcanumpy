@@ -30,14 +30,6 @@ jobs:
           pip install -e .
           pip install -r src/requirements.txt
 
-      - name: Set up auth token
-        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
-
-      - name: Run gh-pages action
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          publish_dir: ./docs/_build/html  # Path to the folder you want to deploy
-
       - name: Build the documentation
         run: sphinx-build -b html src docs/_build/html
 
@@ -46,5 +38,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build/html
-          publish_branch: gh-pages
-          user_name: GitHub Actions
