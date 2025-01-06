@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "arcanumpy"
-version = "0.1.0"
+version = "0.1.1"
 description = "Personal selection of random functions and codes in Python"
 authors = ["Ramiz Qudsi <qudsiramiz@gmail.com>"]
 license = "GPL V3"

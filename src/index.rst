@@ -40,7 +40,6 @@ Installation
 
    Installation <install>
 
-
 Functions
 =========
 .. toctree::

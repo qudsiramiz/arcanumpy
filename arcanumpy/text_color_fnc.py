@@ -80,9 +80,8 @@ class text_color:
     Jupyter Notebook Usage:
     -----------------------
 
-    .. jupyter-execute::
-
-        from arcanumpy.text_color_fnc import text_color
+    
+        from arcanumpy import text_color_fnc
 
         # Create a sample text to test the functions.
         sample_text = "This is a sample text."
