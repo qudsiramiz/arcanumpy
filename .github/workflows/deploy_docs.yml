@@ -3,12 +3,28 @@ name: Deploy Sphinx Docs
 on:
   push:
     branches:
-      - main  # or the branch where your code resides
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Git configuration
+        run: |
+          # Ensure the 'origin' remote is set correctly
+          if ! git remote get-url origin; then
+            git remote add origin https://github.com/qudsiramiz/arcanumpy.git
+          fi
+          
+          git config user.name "qudsiramiz"
+          git config user.email "qudsiramiz@users.noreply.github.com"
+
+      - name: Create a commit and push
+        run: |
+          git add --all
+          git commit -m "Deploy updates"
+          git push origin main
+
       - name: Checkout the repository
         uses: actions/checkout@v3
 
