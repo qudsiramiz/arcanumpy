@@ -1,0 +1,570 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>arcanumpy.seaborn_plots_fncs &mdash; ArcanumPy  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=004ebab9" />
+
+  
+    <link rel="shortcut icon" href="../../_static/arcanumpy_logo.png"/>
+    <link rel="canonical" href="https://qudsiramiz.space/arcanumpy/_modules/arcanumpy/seaborn_plots_fncs.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/thebelab-helper.js"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #042444" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            ArcanumPy
+              <img src="../../_static/arcanumpy_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About ArcanumPy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html">arcanumpy.SeabornFig2Grid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid.__init__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid.__dict__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid.__module__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.arcanumpy.html">arcanumpy.arcanumpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html">arcanumpy.get_files_from_web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web"><code class="docutils literal notranslate"><span class="pre">get_files_from_web</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web.download_files_from_cdaweb"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.download_files_from_cdaweb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web.__init__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#id0"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.download_files_from_cdaweb()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web.__dict__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web.__module__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.hist_test.html">arcanumpy.hist_test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html">arcanumpy.histogram_plots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots"><code class="docutils literal notranslate"><span class="pre">hist_plots</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.__init__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.compute_rr"><code class="docutils literal notranslate"><span class="pre">hist_plots.compute_rr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.get_thresh"><code class="docutils literal notranslate"><span class="pre">hist_plots.get_thresh()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.brazil_plot_with_threshold"><code class="docutils literal notranslate"><span class="pre">hist_plots.brazil_plot_with_threshold()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.get_brzl_hist"><code class="docutils literal notranslate"><span class="pre">hist_plots.get_brzl_hist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.brazil_plot_multiple"><code class="docutils literal notranslate"><span class="pre">hist_plots.brazil_plot_multiple()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.calc_pdf"><code class="docutils literal notranslate"><span class="pre">hist_plots.calc_pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.joint_pdf"><code class="docutils literal notranslate"><span class="pre">hist_plots.joint_pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.kde_plots"><code class="docutils literal notranslate"><span class="pre">hist_plots.kde_plots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.__dict__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots.__module__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.html">arcanumpy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html">arcanumpy.SeabornFig2Grid module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.arcanumpy.html">arcanumpy.arcanumpy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html">arcanumpy.get_files_from_web module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web"><code class="docutils literal notranslate"><span class="pre">get_files_from_web</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.hist_test.html">arcanumpy.hist_test module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html">arcanumpy.histogram_plots module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.histogram_plots.html#arcanumpy.histogram_plots.hist_plots"><code class="docutils literal notranslate"><span class="pre">hist_plots</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots.html">arcanumpy.seaborn_plots module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html">arcanumpy.seaborn_plots_fncs module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.kde_plots"><code class="docutils literal notranslate"><span class="pre">kde_plots()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.seaborn_subplots"><code class="docutils literal notranslate"><span class="pre">seaborn_subplots()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html">arcanumpy.text_color_fnc module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color"><code class="docutils literal notranslate"><span class="pre">text_color</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color"><code class="docutils literal notranslate"><span class="pre">background_color</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.html#module-arcanumpy">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots.html">arcanumpy.seaborn_plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html">arcanumpy.seaborn_plots_fncs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.kde_plots"><code class="docutils literal notranslate"><span class="pre">kde_plots()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.seaborn_subplots"><code class="docutils literal notranslate"><span class="pre">seaborn_subplots()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html">arcanumpy.text_color_fnc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color"><code class="docutils literal notranslate"><span class="pre">text_color</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.red_text"><code class="docutils literal notranslate"><span class="pre">text_color.red_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.green_text"><code class="docutils literal notranslate"><span class="pre">text_color.green_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.yellow_text"><code class="docutils literal notranslate"><span class="pre">text_color.yellow_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.blue_text"><code class="docutils literal notranslate"><span class="pre">text_color.blue_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.magenta_text"><code class="docutils literal notranslate"><span class="pre">text_color.magenta_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.cyan_text"><code class="docutils literal notranslate"><span class="pre">text_color.cyan_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.white_text"><code class="docutils literal notranslate"><span class="pre">text_color.white_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.black_text"><code class="docutils literal notranslate"><span class="pre">text_color.black_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.aqua_text"><code class="docutils literal notranslate"><span class="pre">text_color.aqua_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.orange_text"><code class="docutils literal notranslate"><span class="pre">text_color.orange_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.purple_text"><code class="docutils literal notranslate"><span class="pre">text_color.purple_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.pink_text"><code class="docutils literal notranslate"><span class="pre">text_color.pink_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.grey_text"><code class="docutils literal notranslate"><span class="pre">text_color.grey_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.brown_text"><code class="docutils literal notranslate"><span class="pre">text_color.brown_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.turquoise_text"><code class="docutils literal notranslate"><span class="pre">text_color.turquoise_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.lime_text"><code class="docutils literal notranslate"><span class="pre">text_color.lime_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.bold_text"><code class="docutils literal notranslate"><span class="pre">text_color.bold_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.underline_text"><code class="docutils literal notranslate"><span class="pre">text_color.underline_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.blink_text"><code class="docutils literal notranslate"><span class="pre">text_color.blink_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.reverse_text"><code class="docutils literal notranslate"><span class="pre">text_color.reverse_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.invisible_text"><code class="docutils literal notranslate"><span class="pre">text_color.invisible_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.strikethrough_text"><code class="docutils literal notranslate"><span class="pre">text_color.strikethrough_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.double_underline_text"><code class="docutils literal notranslate"><span class="pre">text_color.double_underline_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.double_intensity_text"><code class="docutils literal notranslate"><span class="pre">text_color.double_intensity_text()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.__dict__"><code class="docutils literal notranslate"><span class="pre">text_color.__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.text_color.__module__"><code class="docutils literal notranslate"><span class="pre">text_color.__module__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color"><code class="docutils literal notranslate"><span class="pre">background_color</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.red_background"><code class="docutils literal notranslate"><span class="pre">background_color.red_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.green_background"><code class="docutils literal notranslate"><span class="pre">background_color.green_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.yellow_background"><code class="docutils literal notranslate"><span class="pre">background_color.yellow_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.blue_background"><code class="docutils literal notranslate"><span class="pre">background_color.blue_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.magenta_background"><code class="docutils literal notranslate"><span class="pre">background_color.magenta_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.cyan_background"><code class="docutils literal notranslate"><span class="pre">background_color.cyan_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.white_background"><code class="docutils literal notranslate"><span class="pre">background_color.white_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.black_background"><code class="docutils literal notranslate"><span class="pre">background_color.black_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.aqua_background"><code class="docutils literal notranslate"><span class="pre">background_color.aqua_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.orange_background"><code class="docutils literal notranslate"><span class="pre">background_color.orange_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.purple_background"><code class="docutils literal notranslate"><span class="pre">background_color.purple_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.pink_background"><code class="docutils literal notranslate"><span class="pre">background_color.pink_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.grey_background"><code class="docutils literal notranslate"><span class="pre">background_color.grey_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.brown_background"><code class="docutils literal notranslate"><span class="pre">background_color.brown_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.turquoise_background"><code class="docutils literal notranslate"><span class="pre">background_color.turquoise_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.lime_background"><code class="docutils literal notranslate"><span class="pre">background_color.lime_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.bold_background"><code class="docutils literal notranslate"><span class="pre">background_color.bold_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.underline_background"><code class="docutils literal notranslate"><span class="pre">background_color.underline_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.blink_background"><code class="docutils literal notranslate"><span class="pre">background_color.blink_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.reverse_background"><code class="docutils literal notranslate"><span class="pre">background_color.reverse_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.invisible_background"><code class="docutils literal notranslate"><span class="pre">background_color.invisible_background()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.__dict__"><code class="docutils literal notranslate"><span class="pre">background_color.__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rst_files/arcanumpy.text_color_fnc.html#arcanumpy.text_color_fnc.background_color.__module__"><code class="docutils literal notranslate"><span class="pre">background_color.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../citation.html">Citation and Acknowledgements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../citation.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../citation.html#citation">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../citation.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #042444" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ArcanumPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">arcanumpy.seaborn_plots_fncs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for arcanumpy.seaborn_plots_fncs</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">arcanumpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">SeabornFig2Grid</span> <span class="k">as</span> <span class="n">sfg</span>
+
+
+<div class="viewcode-block" id="kde_plots">
+<a class="viewcode-back" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.kde_plots">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">kde_plots</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">x</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">y</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">x_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">y_label</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">data_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">x_log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">y_log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">xlim</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-1</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">],</span>
+        <span class="n">ylim</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1e-1</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">],</span>
+        <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+        <span class="n">marker_size</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="n">spearman</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">pearson</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fig_save</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">hue_norm</span><span class="p">:</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">(),</span>
+        <span class="n">height</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">ratio</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="n">space</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">bins</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="n">dark_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">var_marker_size</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+
+    <span class="n">pad</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">labelsize</span> <span class="o">=</span> <span class="mi">35</span>
+    <span class="n">ticklabelsize</span> <span class="o">=</span> <span class="mi">35</span>
+    <span class="n">clabelsize</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">ticklength</span> <span class="o">=</span> <span class="mi">15</span>
+
+    <span class="c1"># Remove all occurances of delta_beta where delta_beta is less than 0</span>
+    <span class="k">if</span> <span class="n">log_scale</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">axs1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratio</span><span class="p">,</span>
+                         <span class="n">space</span><span class="o">=</span><span class="n">space</span><span class="p">,</span> <span class="n">hue_norm</span><span class="o">=</span><span class="n">hue_norm</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="s2">&quot;msh_msp_shear&quot;</span><span class="p">:</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="c1"># If var_marker_size is true, then make a concentric circle to show the size of the data points.</span>
+    <span class="c1"># Make srue that the circles do not have a facecolor</span>
+    <span class="k">if</span> <span class="n">var_marker_size</span><span class="p">:</span>
+        <span class="n">radii_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">marker_size</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">radii_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">marker_size</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="n">radii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">radii_max</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">radii</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+        <span class="n">radii_size</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">radii</span> <span class="o">**</span> <span class="mi">2</span>
+
+        <span class="c1"># Add scatter plot of circles to show the size of the data points at x=0 and y=0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">radii</span><span class="p">)):</span>
+            <span class="n">axs1</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">7</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">8</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="n">radii_size</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                  <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">offset_position</span><span class="o">=</span><span class="s1">&#39;screen&#39;</span><span class="p">)</span>
+            <span class="c1"># Add labels</span>
+            <span class="n">axs1</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">radii</span><span class="p">[</span><span class="n">i</span><span class="p">])),</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.8</span> <span class="o">+</span> <span class="n">i</span><span class="o">/</span><span class="mf">1.2</span><span class="p">),</span>  <span class="n">textcoords</span><span class="o">=</span><span class="s2">&quot;offset points&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                   <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mf">1.2</span><span class="o">*</span><span class="n">clabelsize</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;radii: </span><span class="si">{</span><span class="n">radii</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="c1"># for i in range(len(radii)):</span>
+        <span class="c1">#     circle = plt.Circle((-7, 0), radii[i], color=color, alpha=alpha, fill=False,</span>
+        <span class="c1">#                         linewidth=2)</span>
+        <span class="c1">#     axs1.ax_joint.add_artist(circle)</span>
+        <span class="c1">#     # Add labels</span>
+        <span class="c1">#     axs1.ax_joint.annotate(str(int(radii[i])), xy=(-5, radii[i] - 0.5), ha=&#39;center&#39;,</span>
+        <span class="c1">#                            va=&#39;center&#39;, fontsize=clabelsize, color=color, alpha=alpha)</span>
+        <span class="c1">#     # Add value of radii (rounded to the nearest integer) as legend</span>
+        <span class="c1">#     axs1.ax_joint.legend([str(int(radii[i]))], loc=&#39;lower right&#39;, fontsize=clabelsize,</span>
+        <span class="c1">#                          frameon=False)</span>
+            
+        <span class="c1"># Plot a few circles at the top right corner to show the size of the data points</span>
+        <span class="c1"># axs1.ax_joint.scatter(x=[1e1, 1e1, 1e1], y=[1e2, 1e2, 1e2], s=[100, 200, 300], color=color,</span>
+        <span class="c1">#                         alpha=alpha)</span>
+        <span class="c1"># axs1.ax_joint.text(x=1e1, y=1e2, s=&quot;100&quot;, fontsize=clabelsize, color=color, alpha=alpha)</span>
+        <span class="c1"># axs1.ax_joint.text(x=1e1, y=1e2, s=&quot;200&quot;, fontsize=clabelsize, color=color, alpha=alpha)</span>
+        <span class="c1"># axs1.ax_joint.text(x=1e1, y=1e2, s=&quot;300&quot;, fontsize=clabelsize, color=color, alpha=alpha)</span>
+
+        
+
+        <span class="c1"># axs1.plot_joint(sns.histplot, hue=df.r_rc, alpha=alpha, color=color, bins=[40, 40],</span>
+        <span class="c1"># stat=&quot;density&quot;,)</span>
+    <span class="c1"># axs1.plot_marginals(sns.histplot, kde=True, alpha=alpha, log_scale=log_scale, color=color,</span>
+    <span class="c1">#                     bins=bins, stat=&quot;density&quot;, common_norm=True, common_bins=True, fill=True,</span>
+    <span class="c1">#                     linewidth=2, edgecolor=color, line_kws={&quot;linewidth&quot;: 5, &quot;color&quot;: color})</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs1</span><span class="o">.</span><span class="n">ax_marg_x</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="n">x_log_scale</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;frequency&quot;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">common_bins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                 <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">})</span>
+
+    <span class="c1"># axs1.ax_marg_x.set_xlim(xlim)</span>
+    <span class="c1"># axs1.ax_marg_y.set_ylim(ylim)</span>
+    <span class="c1"># axs1.ax_marg_x.set_yscale(&quot;linear&quot;)</span>
+    <span class="c1"># axs1.ax_marg_y.set_xscale(&quot;log&quot;)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs1</span><span class="o">.</span><span class="n">ax_marg_y</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                 <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">log_scale</span><span class="o">=</span><span class="n">y_log_scale</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;frequency&quot;</span><span class="p">,</span> <span class="n">common_norm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                 <span class="n">common_bins</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+                 <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;linewidth&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="n">color</span><span class="p">})</span>
+
+    <span class="c1"># print(f&quot;The y bins are {bins[1]}&quot;)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="s2">&quot;msh_msp_shear&quot;</span><span class="p">:</span>
+        <span class="n">shear_angle_theory</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">delta_beta_theory_half</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">shear_angle_theory</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">delta_beta_theory_one</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">shear_angle_theory</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">delta_beta_theory_two</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">shear_angle_theory</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+
+        <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta_beta_theory_half</span><span class="p">,</span> <span class="n">shear_angle_theory</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>
+                              <span class="n">ls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\lambda$ = 0.5&quot;</span><span class="p">)</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta_beta_theory_one</span><span class="p">,</span> <span class="n">shear_angle_theory</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span>
+                              <span class="n">ls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\lambda$ = 1&quot;</span><span class="p">)</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta_beta_theory_two</span><span class="p">,</span> <span class="n">shear_angle_theory</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+                              <span class="n">ls</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\lambda$ = 2&quot;</span><span class="p">)</span>
+        <span class="n">lgnd</span> <span class="o">=</span> <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">handle</span> <span class="ow">in</span> <span class="n">lgnd</span><span class="o">.</span><span class="n">legendHandles</span><span class="p">:</span>
+            <span class="n">handle</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dark_mode</span><span class="p">:</span>
+        <span class="n">text_color</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+        <span class="n">face_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+        <span class="n">edge_color</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">text_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+        <span class="n">face_color</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+        <span class="n">edge_color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">==</span> <span class="s2">&quot;msh_msp_shear&quot;</span><span class="p">:</span>
+        <span class="n">spearman</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="n">spearman</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">x_spearman</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">y_spearman</span> <span class="o">=</span> <span class="n">spearman</span> <span class="o">*</span> <span class="n">x_spearman</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="o">-</span> <span class="n">spearman</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">x</span><span class="p">])</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_spearman</span><span class="p">,</span> <span class="n">y_spearman</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="c1">#f&quot;$\\rho_{{\\rm {&#39;s&#39;}}}$ = {spearman:.2f}\n&quot;</span>
+                                          <span class="sa">f</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">rho_</span><span class="se">{{\\</span><span class="s2">rm </span><span class="si">{</span><span class="s1">&#39;p&#39;</span><span class="si">}</span><span class="se">}}</span><span class="s2">$ = </span><span class="si">{</span><span class="n">spearman</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                              <span class="n">transform</span><span class="o">=</span><span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
+                              <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">face_color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="n">edge_color</span><span class="p">,</span>
+                                        <span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.2&#39;</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span>
+                              <span class="n">color</span><span class="o">=</span><span class="n">text_color</span><span class="p">)</span>
+
+    <span class="n">pos_joint_ax</span> <span class="o">=</span> <span class="n">axs1</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="n">pos_marg_x_ax</span> <span class="o">=</span> <span class="n">axs1</span><span class="o">.</span><span class="n">ax_marg_x</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span>
+    <span class="n">axs1</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="n">pos_joint_ax</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="n">pos_joint_ax</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="n">pos_marg_x_ax</span><span class="o">.</span><span class="n">width</span><span class="p">,</span>
+                                <span class="n">pos_joint_ax</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos_joint_ax</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="mf">.07</span><span class="p">,</span> <span class="n">pos_joint_ax</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;Shear&quot;</span> <span class="ow">or</span> <span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;Reconnection-Energy&quot;</span><span class="p">:</span>
+        <span class="n">label_bottom</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">x_label</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">label_bottom</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">x_label</span> <span class="o">=</span> <span class="n">x_label</span>
+
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span>
+                                 <span class="n">labelbottom</span><span class="o">=</span><span class="n">label_bottom</span><span class="p">,</span>
+                                 <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labeltop</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                 <span class="n">labelright</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">ticklength</span><span class="p">,</span>
+                                 <span class="n">labelsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span> <span class="n">labelrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="n">pad</span><span class="p">)</span>
+
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                 <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="n">ticklength</span><span class="p">,</span>
+                                 <span class="n">labelsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span> <span class="n">labelrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                 <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+                                 <span class="n">length</span><span class="o">=</span><span class="n">ticklength</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span> <span class="n">labelrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="n">labelbottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                 <span class="n">bottom</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+                                 <span class="n">length</span><span class="o">=</span><span class="n">ticklength</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span> <span class="n">labelrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">axs1</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="n">x_label</span><span class="p">,</span> <span class="n">y_label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">labelsize</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span>
+                          <span class="n">va</span><span class="o">=</span><span class="s2">&quot;bottom&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="n">face_color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                          <span class="n">edgecolor</span><span class="o">=</span><span class="n">edge_color</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.2&#39;</span><span class="p">),</span>
+                          <span class="n">fontsize</span><span class="o">=</span><span class="n">ticklabelsize</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">text_color</span><span class="p">)</span>
+
+    <span class="c1"># Set the tight layout</span>
+    <span class="n">axs1</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">fig_save</span><span class="p">):</span>
+        <span class="n">fig_dir</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;../figures/seaborn_plots/20230323/&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">):</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">)</span>
+        <span class="n">fname</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fig_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">_vs_</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2">_dm_</span><span class="si">{</span><span class="n">dark_mode</span><span class="si">}</span><span class="s2">_20230323.png&quot;</span>
+        <span class="n">axs1</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">axs1</span></div>
+
+
+
+<div class="viewcode-block" id="seaborn_subplots">
+<a class="viewcode-back" href="../../rst_files/arcanumpy.seaborn_plots_fncs.html#arcanumpy.seaborn_plots_fncs.seaborn_subplots">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">seaborn_subplots</span><span class="p">(</span>
+        <span class="n">df_list</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">keys</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">figsize</span><span class="p">:</span> <span class="nb">tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span>
+        <span class="n">labels</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">data_type</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">color_list</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span>
+        <span class="n">y_log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">x_log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">log_scale</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">fig_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fig_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+        <span class="n">bins</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">nbins</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+        <span class="n">x_lim</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">y_lim</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dark_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">var_marker_size</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">):</span>
+
+    <span class="n">axs_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_list</span><span class="p">):</span>
+        <span class="c1"># Find the spearman and pearson correlation between key and &quot;r_rc&quot;</span>
+        <span class="n">spearman</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;r_rc&quot;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;spearman&quot;</span><span class="p">)</span>
+        <span class="n">pearson</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;r_rc&quot;</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;pearson&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x_lim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">x_lim</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+        <span class="k">if</span> <span class="n">x_log_scale</span> <span class="ow">and</span> <span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Raise a warning saying that the minimum value was changed</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[91m The minimum value of </span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> was changed from &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2"> to avoid a log scale &quot;</span>
+                            <span class="s2">&quot;error.</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
+            <span class="c1"># Set the minimum to minimum value greater than 0</span>
+            <span class="n">x_lim</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">y_lim</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">y_lim</span> <span class="o">=</span> <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+        <span class="k">if</span> <span class="n">y_log_scale</span> <span class="ow">and</span> <span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Raise a warning saying that the minimum value was changed</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\033</span><span class="s2">[91m The minimum value of </span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> was changed from &quot;</span>
+                            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2"> to avoid a log scale &quot;</span>
+                            <span class="s2">&quot;error.</span><span class="se">\033</span><span class="s2">[0m&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Set the minimum to minimum value greater than 0</span>
+            <span class="n">y_lim</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">][</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">bins</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x_log_scale</span> <span class="ow">or</span> <span class="n">y_log_scale</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">x_log_scale</span> <span class="ow">and</span> <span class="n">y_log_scale</span><span class="p">:</span>
+                <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+            <span class="k">elif</span> <span class="n">x_log_scale</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">y_log_scale</span><span class="p">:</span>
+                <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+            <span class="k">elif</span> <span class="ow">not</span> <span class="n">x_log_scale</span> <span class="ow">and</span> <span class="n">y_log_scale</span><span class="p">:</span>
+                <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="k">elif</span> <span class="n">bins</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">x_log_scale</span> <span class="ow">or</span> <span class="n">y_log_scale</span><span class="p">):</span>
+            <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_lim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y_lim</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">nbins</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="c1"># print(bins)</span>
+        <span class="k">if</span> <span class="n">var_marker_size</span><span class="p">:</span>
+            <span class="n">marker_size</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">r_rc</span><span class="o">.</span><span class="n">values</span><span class="o">**</span><span class="mi">2</span>
+            <span class="n">spearman</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">marker_size</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">axs</span> <span class="o">=</span> <span class="n">kde_plots</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x_label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="n">y_label</span><span class="o">=</span><span class="n">labels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">data_type</span><span class="o">=</span><span class="n">data_type</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">log_scale</span><span class="o">=</span><span class="n">log_scale</span><span class="p">,</span>
+                        <span class="n">x_log_scale</span><span class="o">=</span><span class="n">x_log_scale</span><span class="p">,</span> <span class="n">y_log_scale</span><span class="o">=</span><span class="n">y_log_scale</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="n">marker_size</span><span class="p">,</span>
+                        <span class="n">xlim</span><span class="o">=</span><span class="n">x_lim</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="n">y_lim</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">spearman</span><span class="o">=</span><span class="n">spearman</span><span class="p">,</span>
+                        <span class="n">pearson</span><span class="o">=</span><span class="n">pearson</span><span class="p">,</span> <span class="n">fig_save</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">dark_mode</span><span class="o">=</span><span class="n">dark_mode</span><span class="p">,</span> <span class="n">var_marker_size</span><span class="o">=</span><span class="n">var_marker_size</span><span class="p">)</span>
+        <span class="n">axs_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">axs</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The figure size is </span><span class="si">{</span><span class="n">figsize</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">figsize</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">figsize</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">figsize</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="c1"># fig.subplots_adjust(hspace=0.01, wspace=0.01, left=0.03, right=1.5, top=0.65, bottom=0.03)</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sfg</span><span class="o">.</span><span class="n">SeabornFig2Grid</span><span class="p">(</span><span class="n">axs_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sfg</span><span class="o">.</span><span class="n">SeabornFig2Grid</span><span class="p">(</span><span class="n">axs_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sfg</span><span class="o">.</span><span class="n">SeabornFig2Grid</span><span class="p">(</span><span class="n">axs_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">sfg</span><span class="o">.</span><span class="n">SeabornFig2Grid</span><span class="p">(</span><span class="n">axs_list</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">fig</span><span class="p">,</span> <span class="n">gs</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="n">gs</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">gs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">top</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="mf">0.085</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.22</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fig_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">fig_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;../figures/seaborn_plots/20230323/</span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_vs_</span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">_dm_</span><span class="si">{</span><span class="n">dark_mode</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span>\
+                   <span class="sa">f</span><span class="s2">&quot;_20230323.</span><span class="si">{</span><span class="n">fig_format</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">fig_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;../figures/seaborn_plots/20230323/</span><span class="si">{</span><span class="n">fig_name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">dark_mode</span><span class="si">}</span><span class="s2">_20230323.</span><span class="si">{</span><span class="n">fig_format</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">fig_name</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span> <span class="n">pad_inches</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">fig_format</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saved figure to </span><span class="si">{</span><span class="n">fig_name</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> vs </span><span class="si">{</span><span class="n">keys</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">axs_list</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright @ Ramiz Qudsi, 2024.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
