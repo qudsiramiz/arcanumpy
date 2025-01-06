@@ -1,10 +1,13 @@
 [tool.poetry]
 name = "arcanumpy"
 version = "0.1.0"
-description = "Personal selection of installable codes in Python"
-authors = ["qudsiramiz <qudsiramiz@gmail.com>"]
+description = "Personal selection of random functions and codes in Python"
+authors = ["Ramiz Qudsi <qudsiramiz@gmail.com>"]
 license = "GPL V3"
 readme = "README.md"
+homepage = "https://qudsiramiz.space/arcanumpy/"
+repository = "https://github.com/qudsiramiz/arcanumpy/"
+documentation = "https://qudsiramiz.space/arcanumpy/"
 
 [tool.poetry.dependencies]
 python = ">=3.10"
