@@ -85,7 +85,7 @@ html_favicon = "_static/arcanumpy_logo.png"
 html_context = {
     "display_github": True,
     # "display_versions": True,
-    "versions": versions,
+    # "versions": versions,
     "github_user": "qudsiramiz",
     "github_repo": "arcanumpy",
     "github_version": "main",
