@@ -16,7 +16,7 @@ Submodules
    :maxdepth: 4
 
    arcanumpy.SeabornFig2Grid
-   arcanumpy.arcanum
+   arcanumpy.arcanumpy
    arcanumpy.get_files_from_web
    arcanumpy.histogram_plots
    arcanumpy.histogram_sample

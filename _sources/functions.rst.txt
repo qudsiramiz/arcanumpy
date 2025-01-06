@@ -6,7 +6,6 @@ Functions
    :maxdepth: 3
 
    arcanumpy.SeabornFig2Grid <./rst_files/arcanumpy.SeabornFig2Grid.rst>
-   arcanumpy.arcanum <./rst_files/arcanumpy.arcanum.rst>
    arcanumpy.arcanumpy <./rst_files/arcanumpy.arcanumpy.rst>
    arcanumpy.get_files_from_web <./rst_files/arcanumpy.get_files_from_web.rst>
    arcanumpy.histogram_plots <./rst_files/arcanumpy.histogram_plots.rst>

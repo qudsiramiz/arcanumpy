@@ -67,7 +67,24 @@
 <li class="toctree-l1"><a class="reference internal" href="about.html">About ArcanumPy</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-virtual-environment">Creating a Virtual Environment</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-python3">Using python3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-linux-macos">On Linux/MacOS:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#on-windows">On Windows:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-arcanumpy">Installing <cite>arcanumpy</cite></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installing-from-pypi">Installing from PyPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-from-source">Installing from Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#verifying-the-installation">Verifying the Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#using-arcanumpy-software">Using <cite>arcanumpy</cite> Software</a></li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="functions.html">Functions</a><ul>
@@ -80,7 +97,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rst_files/arcanumpy.arcanum.html">arcanumpy.arcanum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst_files/arcanumpy.arcanumpy.html">arcanumpy.arcanumpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rst_files/arcanumpy.get_files_from_web.html">arcanumpy.get_files_from_web</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="rst_files/arcanumpy.get_files_from_web.html#arcanumpy.get_files_from_web.get_files_from_web"><code class="docutils literal notranslate"><span class="pre">get_files_from_web</span></code></a><ul>
@@ -123,7 +139,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="rst_files/arcanumpy.html#submodules">Submodules</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.SeabornFig2Grid.html">arcanumpy.SeabornFig2Grid module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.arcanum.html">arcanumpy.arcanum module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.arcanumpy.html">arcanumpy.arcanumpy module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.get_files_from_web.html">arcanumpy.get_files_from_web module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.histogram_plots.html">arcanumpy.histogram_plots module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rst_files/arcanumpy.histogram_sample.html">arcanumpy.histogram_sample module</a></li>
@@ -262,6 +278,130 @@
              
   <section id="installation-guide">
 <h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading"></a></h1>
+<p>The next section of this document will guide you through the installation process of <cite>arcanumpy</cite>.</p>
+<p>Though it is not necessary, we strongly recommend that you install <cite>arcanumpy</cite> in a virtual environment.
+This will prevent any conflicts with other Python packages you may have installed.</p>
+<p>A virtual environment is a self-contained directory tree that contains a Python installation for a
+particular version of Python, plus a number of additional packages. You can install packages into a
+virtual environment without affecting the system Python installation. This is especially useful when
+you need to install packages that might conflict with other packages you have installed.</p>
+<section id="creating-a-virtual-environment">
+<h2>Creating a Virtual Environment<a class="headerlink" href="#creating-a-virtual-environment" title="Link to this heading"></a></h2>
+<p>There are several ways to create a virtual environment. We recommend using <cite>python3</cite> to do so.</p>
+<p>For this exercise, we will assume that you have a directory called <cite>Documents/arcanumpy</cite> where you will
+install <cite>arcanumpy</cite> and create your virtual environment. Please replace <cite>Documents/arcanumpy</cite> with the actual
+path to the directory where you want to install <cite>arcanumpy</cite> and create your virtual environment.</p>
+<ul class="simple">
+<li><p>Navigate to the <cite>Documents/arcanumpy</cite> directory.</p></li>
+</ul>
+<section id="using-python3">
+<h3>Using python3<a class="headerlink" href="#using-python3" title="Link to this heading"></a></h3>
+<p>You can create a virtual environment called <cite>arcanumpy_venv</cite> (or any other name you might like) using
+<cite>python3</cite> by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>arcanumpy_venv
+</pre></div>
+</div>
+<p>You can activate the virtual environment by running the following command:</p>
+<section id="on-linux-macos">
+<h4>On Linux/MacOS:<a class="headerlink" href="#on-linux-macos" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>arcanumpy_venv/bin/activate
+</pre></div>
+</div>
+</section>
+<section id="on-windows">
+<h4>On Windows:<a class="headerlink" href="#on-windows" title="Link to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.<span class="se">\a</span>rcanumpy_venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</pre></div>
+</div>
+<p>You can deactivate the virtual environment by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>deactivate
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="installing-arcanumpy">
+<h2>Installing <cite>arcanumpy</cite><a class="headerlink" href="#installing-arcanumpy" title="Link to this heading"></a></h2>
+<p>There are three ways to install <cite>arcanumpy</cite>: from pypi, from source, and from a local copy.</p>
+<section id="installing-from-pypi">
+<h3>Installing from PyPI<a class="headerlink" href="#installing-from-pypi" title="Link to this heading"></a></h3>
+<p>After you have created and activated your virtual environment, you can install <cite>arcanumpy</cite> from PyPI by
+running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>arcanumpy
+</pre></div>
+</div>
+</section>
+<section id="installing-from-source">
+<h3>Installing from Source<a class="headerlink" href="#installing-from-source" title="Link to this heading"></a></h3>
+<p>After you have created and activated your virtual environment, you can install <cite>arcanumpy</cite> directly from
+GitHub by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/qudsiramiz/arcanumpy
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will install the latest version of <cite>arcanumpy</cite> from the main branch. If you want to install a specific version, please append the version number to the URL.
+For example, if you want to install version <cite>0.3.1</cite>, you can run the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/qudsiramiz/arcanumpy@0.3.1
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="verifying-the-installation">
+<h1>Verifying the Installation<a class="headerlink" href="#verifying-the-installation" title="Link to this heading"></a></h1>
+<p>You can verify that <cite>arcanumpy</cite> was installed by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>show<span class="w"> </span>arcanumpy
+</pre></div>
+</div>
+<p>This should produce output similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Name</span><span class="p">:</span> <span class="n">arcanumpy</span>
+<span class="n">Version</span><span class="p">:</span> <span class="mf">0.1.0</span>
+<span class="n">Summary</span><span class="p">:</span> <span class="n">Personal</span> <span class="n">selection</span> <span class="n">of</span> <span class="n">random</span> <span class="n">functions</span> <span class="ow">and</span> <span class="n">codes</span> <span class="ow">in</span> <span class="n">Python</span>
+<span class="n">Home</span><span class="o">-</span><span class="n">page</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">qudsiramiz</span><span class="o">.</span><span class="n">space</span><span class="o">/</span><span class="n">arcanumpy</span><span class="o">/</span>
+<span class="n">Author</span><span class="p">:</span> <span class="n">Ramiz</span> <span class="n">Qudsi</span>
+<span class="n">Author</span><span class="o">-</span><span class="n">email</span><span class="p">:</span> <span class="n">qudsiramiz</span><span class="nd">@gmail</span><span class="o">.</span><span class="n">com</span>
+<span class="n">License</span><span class="p">:</span> <span class="n">GPL</span> <span class="n">V3</span>
+<span class="n">Location</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">cephadrius</span><span class="o">/</span><span class="n">Desktop</span><span class="o">/</span><span class="n">arcanum_test</span><span class="o">/</span><span class="n">arcanum_test</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span>
+<span class="n">Requires</span><span class="p">:</span> <span class="n">cdflib</span><span class="p">,</span> <span class="n">imageio</span><span class="p">,</span> <span class="n">pandas</span><span class="p">,</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="p">,</span> <span class="n">seaborn</span>
+<span class="n">Required</span><span class="o">-</span><span class="n">by</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>You can also verify that <cite>arcanumpy</cite> was installed by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>list
+</pre></div>
+</div>
+<p>This should produce output similar to the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Package<span class="w">         </span>Version
+---------------<span class="w"> </span>-------
+.....................
+kiwisolver<span class="w">      </span><span class="m">1</span>.4.5
+arcanumpy<span class="w">       </span><span class="m">0</span>.0.1
+matplotlib<span class="w">      </span><span class="m">3</span>.8.2
+numpy<span class="w">           </span><span class="m">1</span>.26.4
+.....................
+</pre></div>
+</div>
+<p>You can open a Python shell and import <cite>arcanumpy</cite> by running the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python
+import<span class="w"> </span>arcanumpy
+arcanumpy.__version__
+</pre></div>
+</div>
+<p>This should produce output similar to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;0.0.1&#39;</span>
+</pre></div>
+</div>
+<p>If that worked, congratulations! You have successfully installed <cite>arcanumpy</cite>.</p>
+</section>
+<section id="using-arcanumpy-software">
+<h1>Using <cite>arcanumpy</cite> Software<a class="headerlink" href="#using-arcanumpy-software" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will add more examples and tutorials in the future. For now, we will use a Jupyter Notebook
+to demonstrate how to use <cite>arcanumpy</cite>.</p>
+</div>
 </section>
 
 
