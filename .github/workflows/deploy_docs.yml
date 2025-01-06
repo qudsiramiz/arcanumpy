@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          poetry install
           pip install -e .
           pip install -r src/requirements.txt
 
