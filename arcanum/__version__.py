@@ -1,10 +1,11 @@
 """Print the version number for the current installation."""
+
 import logging
 
 
 def version():
     """
-    Print the lexi version number.
+    Print the ArcanumPy version number.
 
     Returns
     -------

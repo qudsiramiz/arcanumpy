@@ -1,0 +1,487 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>arcanum.histogram_plots module &mdash; ArcanumPy  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css?v=572af1d6" />
+      <link rel="stylesheet" type="text/css" href="../_static/thebelab.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=004ebab9" />
+
+  
+    <link rel="shortcut icon" href="../_static/arcanumpy_logo.png"/>
+    <link rel="canonical" href="https://qudsiramiz.space/arcanumpy/rst_files/arcanum.histogram_plots.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/thebelab-helper.js"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script>let toggleHintShow = 'Click to show';</script>
+      <script>let toggleHintHide = 'Click to hide';</script>
+      <script>let toggleOpenOnPrint = 'true';</script>
+      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="arcanum package" href="arcanum.html" />
+    <link rel="prev" title="arcanum.hist_test module" href="arcanum.hist_test.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #042444" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ArcanumPy
+              <img src="../_static/arcanumpy_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About ArcanumPy</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation and Acknowledgements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../citation.html#contributors">Contributors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../citation.html#citation">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../citation.html#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="arcanum.SeabornFig2Grid.html">arcanum.SeabornFig2Grid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.SeabornFig2Grid.html#arcanum.SeabornFig2Grid.SeabornFig2Grid"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.SeabornFig2Grid.html#arcanum.SeabornFig2Grid.SeabornFig2Grid.__init__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.SeabornFig2Grid.html#arcanum.SeabornFig2Grid.SeabornFig2Grid.__dict__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.SeabornFig2Grid.html#arcanum.SeabornFig2Grid.SeabornFig2Grid.__module__"><code class="docutils literal notranslate"><span class="pre">SeabornFig2Grid.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.arcanum.html">arcanum.arcanum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.get_files_from_web.html">arcanum.get_files_from_web</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.get_files_from_web.html#arcanum.get_files_from_web.get_files_from_web"><code class="docutils literal notranslate"><span class="pre">get_files_from_web</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html#arcanum.get_files_from_web.get_files_from_web.download_files_from_cdaweb"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.download_files_from_cdaweb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html#arcanum.get_files_from_web.get_files_from_web.__init__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html#id0"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.download_files_from_cdaweb()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html#arcanum.get_files_from_web.get_files_from_web.__dict__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html#arcanum.get_files_from_web.get_files_from_web.__module__"><code class="docutils literal notranslate"><span class="pre">get_files_from_web.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.hist_test.html">arcanum.hist_test</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">arcanum.histogram_plots</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots"><code class="docutils literal notranslate"><span class="pre">hist_plots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.__init__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.compute_rr"><code class="docutils literal notranslate"><span class="pre">hist_plots.compute_rr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.get_thresh"><code class="docutils literal notranslate"><span class="pre">hist_plots.get_thresh()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.brazil_plot_with_threshold"><code class="docutils literal notranslate"><span class="pre">hist_plots.brazil_plot_with_threshold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.get_brzl_hist"><code class="docutils literal notranslate"><span class="pre">hist_plots.get_brzl_hist()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.brazil_plot_multiple"><code class="docutils literal notranslate"><span class="pre">hist_plots.brazil_plot_multiple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.calc_pdf"><code class="docutils literal notranslate"><span class="pre">hist_plots.calc_pdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.joint_pdf"><code class="docutils literal notranslate"><span class="pre">hist_plots.joint_pdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.kde_plots"><code class="docutils literal notranslate"><span class="pre">hist_plots.kde_plots()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.__dict__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arcanum.histogram_plots.hist_plots.__module__"><code class="docutils literal notranslate"><span class="pre">hist_plots.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="arcanum.html">arcanum</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="arcanum.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="arcanum.SeabornFig2Grid.html">arcanum.SeabornFig2Grid module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.arcanum.html">arcanum.arcanum module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.get_files_from_web.html">arcanum.get_files_from_web module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.hist_test.html">arcanum.hist_test module</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">arcanum.histogram_plots module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.seaborn_plots.html">arcanum.seaborn_plots module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.seaborn_plots_fncs.html">arcanum.seaborn_plots_fncs module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html">arcanum.text_color_fnc module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.html#module-arcanum">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.seaborn_plots.html">arcanum.seaborn_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.seaborn_plots_fncs.html">arcanum.seaborn_plots_fncs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.seaborn_plots_fncs.html#arcanum.seaborn_plots_fncs.kde_plots"><code class="docutils literal notranslate"><span class="pre">kde_plots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.seaborn_plots_fncs.html#arcanum.seaborn_plots_fncs.seaborn_subplots"><code class="docutils literal notranslate"><span class="pre">seaborn_subplots()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="arcanum.text_color_fnc.html">arcanum.text_color_fnc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color"><code class="docutils literal notranslate"><span class="pre">text_color</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.red_text"><code class="docutils literal notranslate"><span class="pre">text_color.red_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.green_text"><code class="docutils literal notranslate"><span class="pre">text_color.green_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.yellow_text"><code class="docutils literal notranslate"><span class="pre">text_color.yellow_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.blue_text"><code class="docutils literal notranslate"><span class="pre">text_color.blue_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.magenta_text"><code class="docutils literal notranslate"><span class="pre">text_color.magenta_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.cyan_text"><code class="docutils literal notranslate"><span class="pre">text_color.cyan_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.white_text"><code class="docutils literal notranslate"><span class="pre">text_color.white_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.black_text"><code class="docutils literal notranslate"><span class="pre">text_color.black_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.aqua_text"><code class="docutils literal notranslate"><span class="pre">text_color.aqua_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.orange_text"><code class="docutils literal notranslate"><span class="pre">text_color.orange_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.purple_text"><code class="docutils literal notranslate"><span class="pre">text_color.purple_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.pink_text"><code class="docutils literal notranslate"><span class="pre">text_color.pink_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.grey_text"><code class="docutils literal notranslate"><span class="pre">text_color.grey_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.brown_text"><code class="docutils literal notranslate"><span class="pre">text_color.brown_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.turquoise_text"><code class="docutils literal notranslate"><span class="pre">text_color.turquoise_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.lime_text"><code class="docutils literal notranslate"><span class="pre">text_color.lime_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.bold_text"><code class="docutils literal notranslate"><span class="pre">text_color.bold_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.underline_text"><code class="docutils literal notranslate"><span class="pre">text_color.underline_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.blink_text"><code class="docutils literal notranslate"><span class="pre">text_color.blink_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.reverse_text"><code class="docutils literal notranslate"><span class="pre">text_color.reverse_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.invisible_text"><code class="docutils literal notranslate"><span class="pre">text_color.invisible_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.strikethrough_text"><code class="docutils literal notranslate"><span class="pre">text_color.strikethrough_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.double_underline_text"><code class="docutils literal notranslate"><span class="pre">text_color.double_underline_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.double_intensity_text"><code class="docutils literal notranslate"><span class="pre">text_color.double_intensity_text()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.__dict__"><code class="docutils literal notranslate"><span class="pre">text_color.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.text_color.__module__"><code class="docutils literal notranslate"><span class="pre">text_color.__module__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color"><code class="docutils literal notranslate"><span class="pre">background_color</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.red_background"><code class="docutils literal notranslate"><span class="pre">background_color.red_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.green_background"><code class="docutils literal notranslate"><span class="pre">background_color.green_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.yellow_background"><code class="docutils literal notranslate"><span class="pre">background_color.yellow_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.blue_background"><code class="docutils literal notranslate"><span class="pre">background_color.blue_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.magenta_background"><code class="docutils literal notranslate"><span class="pre">background_color.magenta_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.cyan_background"><code class="docutils literal notranslate"><span class="pre">background_color.cyan_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.white_background"><code class="docutils literal notranslate"><span class="pre">background_color.white_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.black_background"><code class="docutils literal notranslate"><span class="pre">background_color.black_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.aqua_background"><code class="docutils literal notranslate"><span class="pre">background_color.aqua_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.orange_background"><code class="docutils literal notranslate"><span class="pre">background_color.orange_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.purple_background"><code class="docutils literal notranslate"><span class="pre">background_color.purple_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.pink_background"><code class="docutils literal notranslate"><span class="pre">background_color.pink_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.grey_background"><code class="docutils literal notranslate"><span class="pre">background_color.grey_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.brown_background"><code class="docutils literal notranslate"><span class="pre">background_color.brown_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.turquoise_background"><code class="docutils literal notranslate"><span class="pre">background_color.turquoise_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.lime_background"><code class="docutils literal notranslate"><span class="pre">background_color.lime_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.bold_background"><code class="docutils literal notranslate"><span class="pre">background_color.bold_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.underline_background"><code class="docutils literal notranslate"><span class="pre">background_color.underline_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.blink_background"><code class="docutils literal notranslate"><span class="pre">background_color.blink_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.reverse_background"><code class="docutils literal notranslate"><span class="pre">background_color.reverse_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.invisible_background"><code class="docutils literal notranslate"><span class="pre">background_color.invisible_background()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.__dict__"><code class="docutils literal notranslate"><span class="pre">background_color.__dict__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="arcanum.text_color_fnc.html#arcanum.text_color_fnc.background_color.__module__"><code class="docutils literal notranslate"><span class="pre">background_color.__module__</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html">modules</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #042444" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ArcanumPy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../modules.html">Functions</a></li>
+      <li class="breadcrumb-item active">arcanum.histogram_plots module</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/qudsiramiz/arcanumpy/blob/stable/src/rst_files/arcanum.histogram_plots.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="arcanum.hist_test.html" class="btn btn-neutral float-left" title="arcanum.hist_test module" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arcanum.html" class="btn btn-neutral float-right" title="arcanum package" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-arcanum.histogram_plots">
+<span id="arcanum-histogram-plots-module"></span><h1>arcanum.histogram_plots module<a class="headerlink" href="#module-arcanum.histogram_plots" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">arcanum.histogram_plots.</span></span><span class="sig-name descname"><span class="pre">hist_plots</span></span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to plot histograms and brazil plots for the given data and thresholds respectively.
+It also contains a method to calculate the probability density function of a given array.
+Name of the functions contain the following:
+- calc_pdf: calculates the probability density function of a given array
+- joint_pdf: calculates the joint probability density function of two given arrays
+- brazil_plot_with_threshold: plots the brazil plot for the given data with thresholds
+- get_thresh: gets the threshold values for the given data
+- compute_rr: computes the threshold values for the given data</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.compute_rr">
+<span class="sig-name descname"><span class="pre">compute_rr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bb</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cycl'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.compute_rr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.compute_rr" title="Link to this definition"></a></dt>
+<dd><p>Threshold calculation based on Verscharen and Chandran 2018</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.get_thresh">
+<span class="sig-name descname"><span class="pre">get_thresh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parnt_drct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drct</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hi-res'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.get_thresh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.get_thresh" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.brazil_plot_with_threshold">
+<span class="sig-name descname"><span class="pre">brazil_plot_with_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_lim_1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_lim_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_lim_3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g_lim_4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_par</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_per</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hi-res'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_ver_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcolormesh_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.brazil_plot_with_threshold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.brazil_plot_with_threshold" title="Link to this definition"></a></dt>
+<dd><p>The code to plot the brazil plot for any kind of data. The scale of both x- and y-axes is
+“log”, this can be changed in the line which 65 or so where “bins” is defined and setting
+both scales of x- and y-axes to linear instead of log.</p>
+<p>bp : ion parallel beta (type:array)
+rp : ion anisotropy (type:array)
+xmin : minimum value of x-axis (type:float)
+xmax : maximum value of x-axis (type:float)
+ymin : minimum value of y-axis (type:float)
+ymax : maximum value of y-axis (type:float)
+bins : x and y bins (type:array)
+nbins : number of bins in each direction, defaults to 50 (type:float)
+cmin : minimum value in a bin to be plotted, defaults to 10 (type:float)
+vmin : minimum value of colorbar
+vmax : maximum value fo colorbar
+g_lim_1 to 4 : value of instability thresholds to be plotted</p>
+<blockquote>
+<div><p>1 =&gt; cyclotron instability
+2 =&gt; parallel firehose instability
+3 =&gt; mirror instability
+4 =&gt; oblique firehose instability</p>
+</div></blockquote>
+<p>dir_par : directory for parallel instabilities
+dir_per : directory for oblique instabilities
+res : resolution of thresholds to be plotted, defaults to “hi-res”, other option is “lo-res”
+loc : location of legend
+sim : type of data, this is used while saving figure
+density : whether to plot probabilty density or somple histogram, defaults to false
+plot_thresh : whether to plot thresholds, defaults to false
+save_fig : to save the figure or not, defaults to true
+plot_show : display the plot, defaults to false
+pcolormesh_kwargs : additional arguments to be passed to pcolormesh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>ex</strong> (<em>x-axis bins</em>)</p></li>
+<li><p><strong>ey</strong> (<em>y-axis bins</em>)</p></li>
+<li><p><strong>hist</strong> (<em>histogram of the data</em>)</p></li>
+<li><p><strong>n_hist</strong> (<em>normalized histogram of the data</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">arcanum.histogram_plots</span><span class="w"> </span><span class="kn">import</span> <span class="n">hist_plots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">bp</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">rp</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mf">1e1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ex</span><span class="p">,</span> <span class="n">ey</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">n_hist</span> <span class="o">=</span> <span class="n">hist_plots</span><span class="p">()</span><span class="o">.</span><span class="n">brazil_plot_with_threshold</span><span class="p">(</span><span class="n">bp</span><span class="o">=</span><span class="n">bp</span><span class="p">,</span> <span class="n">rp</span><span class="o">=</span><span class="n">rp</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mf">1e2</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="mf">1e-1</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="mf">1e1</span><span class="p">,</span> <span class="n">cmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">g_lim_1</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g_lim_2</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g_lim_3</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">g_lim_4</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dir_par</span><span class="o">=</span><span class="s2">&quot;0.001_4.000_0.000_00.00&quot;</span><span class="p">,</span> <span class="n">dir_per</span><span class="o">=</span><span class="s2">&quot;0.001_4.000_0.000&quot;</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="s2">&quot;hi-res&quot;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">plot_thresh</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">plot_ver_thresh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">save_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sim</span><span class="o">=</span><span class="s2">&quot;wnd&quot;</span><span class="p">,</span> <span class="n">plot_show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">pcolormesh_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;norm&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="s2">&quot;cmap&quot;</span><span class="p">:</span> <span class="s2">&quot;cividis_r&quot;</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.get_brzl_hist">
+<span class="sig-name descname"><span class="pre">get_brzl_hist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.get_brzl_hist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.get_brzl_hist" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.brazil_plot_multiple">
+<span class="sig-name descname"><span class="pre">brazil_plot_multiple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ey</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ymax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nbins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.brazil_plot_multiple"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.brazil_plot_multiple" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.calc_pdf">
+<span class="sig-name descname"><span class="pre">calc_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Normalize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_pdf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.calc_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.calc_pdf" title="Link to this definition"></a></dt>
+<dd><p>Calculate the probability density function of a given array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_array</strong> (<em>np.array</em>) – The array for which the pdf is to be calculated</p></li>
+<li><p><strong>weight</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of points in each bin, by default 100</p></li>
+<li><p><strong>inc</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of points to be shifted, by default None</p></li>
+<li><p><strong>Normalize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Normalize the input array by the rms value, by default False</p></li>
+<li><p><strong>plot_pdf</strong> (<em>bool</em><em>, </em><em>optional</em>) – Plot the pdf, by default False</p></li>
+<li><p><strong>save_fig</strong> (<em>bool</em><em>, </em><em>optional</em>) – Save the figure, by default False</p></li>
+<li><p><strong>fig_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the figure, by default None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>np.array</em> – The bins of the pdf</p></li>
+<li><p><em>np.array</em> – The pdf of the input array</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">arcanum.histogram_plots</span><span class="w"> </span><span class="kn">import</span> <span class="n">hist_plots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bins</span><span class="p">,</span> <span class="n">x_pdf</span> <span class="o">=</span> <span class="n">hist_plots</span><span class="p">()</span><span class="o">.</span><span class="n">calc_pdf</span><span class="p">(</span><span class="n">input_array</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">inc</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">Normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">plot_pdf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.joint_pdf">
+<span class="sig-name descname"><span class="pre">joint_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">joint_pdf_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imshow_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.joint_pdf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.joint_pdf" title="Link to this definition"></a></dt>
+<dd><p>Calculate the joint probability density function of two given arrays</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>np.array</em>) – The first array for which the pdf is to be calculated</p></li>
+<li><p><strong>y</strong> (<em>np.array</em>) – The second array for which the pdf is to be calculated</p></li>
+<li><p><strong>bins</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of bins in the histogram, by default 100</p></li>
+<li><p><strong>x_label</strong> (<em>str</em><em>, </em><em>optional</em>) – The label of the x-axis, by default None</p></li>
+<li><p><strong>y_label</strong> (<em>str</em><em>, </em><em>optional</em>) – The label of the y-axis, by default None</p></li>
+<li><p><strong>save_fig</strong> (<em>bool</em><em>, </em><em>optional</em>) – Save the figure, by default False</p></li>
+<li><p><strong>fig_name</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the figure, by default None</p></li>
+<li><p><strong>joint_pdf_kwargs</strong> (<em>dict</em><em>, </em><em>optional</em>) – Additional arguments to be passed to the joint pdf plot, by default None. These keyword arguments are passed to the plt.hist2d function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>np.array</em> – The histogram of the joint pdf</p></li>
+<li><p><em>np.array</em> – The x data</p></li>
+<li><p><em>np.array</em> – The y data</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">arcanum.histogram_plots</span><span class="w"> </span><span class="kn">import</span> <span class="n">hist_plots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hst</span><span class="p">,</span> <span class="n">x_s</span><span class="p">,</span> <span class="n">y_s</span> <span class="o">=</span> <span class="n">hist_plots</span><span class="p">()</span><span class="o">.</span><span class="n">joint_pdf</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">save_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">joint_pdf_kwargs</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;bins&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;cmap&quot;</span><span class="p">:</span> <span class="s2">&quot;cividis_r&quot;</span><span class="p">,</span><span class="s2">&quot;norm&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">,},</span> <span class="n">imshow_kwargs</span><span class="o">=</span><span class="p">{</span>
+<span class="go">&quot;cmap&quot;: &quot;Spectral&quot;, &quot;norm&quot;: &quot;log&quot;, &quot;origin&quot;: &quot;lower&quot;,},)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.kde_plots">
+<span class="sig-name descname"><span class="pre">kde_plots</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_fig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sea_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/arcanum/histogram_plots.html#hist_plots.kde_plots"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.kde_plots" title="Link to this definition"></a></dt>
+<dd><p>The code to plot the kernel density estimate plot for any kind of data. The scale of both x-
+and y-axes is “linear”, this can be changed in the line which 65 or so where “bins” is
+defined and setting both scales of x- and y-axes to log instead of linear.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_data</strong> (<em>np.array</em>) – The x data for the kde plot</p></li>
+<li><p><strong>y_data</strong> (<em>np.array</em>) – The y data for the kde plot</p></li>
+<li><p><strong>x_label</strong> (<em>str</em>) – The label for the x-axis</p></li>
+<li><p><strong>y_label</strong> (<em>str</em>) – The label for the y-axis</p></li>
+<li><p><strong>save_fig</strong> (<em>bool</em>) – Whether to save the figure or not</p></li>
+<li><p><strong>sea_kwargs</strong> (<em>dict</em>) – Additional arguments to be passed to the seaborn jointplot function. These keyword
+arguments are passed to the sns.jointplot function in the seaborn library</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The seaborn jointplot object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sns.axisgrid.JointGrid</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">arcanum.histogram_plots</span><span class="w"> </span><span class="kn">import</span> <span class="n">hist_plots</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mf">1e-1</span><span class="p">,</span> <span class="mf">1e1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hist_plots</span><span class="p">()</span><span class="o">.</span><span class="n">kde_plots</span><span class="p">(</span><span class="n">x_data</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y_data</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">save_fig</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sea_kwargs</span><span class="o">=</span><span class="p">{</span> <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;kde&quot;</span><span class="p">,</span> <span class="s2">&quot;cbar&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;thresh&quot;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s2">&quot;fill&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;levels&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;log_scale&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;hue_norm&quot;</span><span class="p">:</span> <span class="s2">&quot;log&quot;</span><span class="p">,</span> <span class="s2">&quot;cmap&quot;</span><span class="p">:</span> <span class="s2">&quot;Blues&quot;</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;ratio&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;space&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;xlim&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">),</span> <span class="s2">&quot;ylim&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">),</span> <span class="p">},</span>
+<span class="go">    )</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'arcanum.histogram_plots',</span> <span class="pre">'__doc__':</span> <span class="pre">'\n</span>&#160;&#160;&#160; <span class="pre">Class</span> <span class="pre">to</span> <span class="pre">plot</span> <span class="pre">histograms</span> <span class="pre">and</span> <span class="pre">brazil</span> <span class="pre">plots</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">given</span> <span class="pre">data</span> <span class="pre">and</span> <span class="pre">thresholds</span> <span class="pre">respectively.\n</span>&#160;&#160;&#160; <span class="pre">It</span> <span class="pre">also</span> <span class="pre">contains</span> <span class="pre">a</span> <span class="pre">method</span> <span class="pre">to</span> <span class="pre">calculate</span> <span class="pre">the</span> <span class="pre">probability</span> <span class="pre">density</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">array.\n</span>&#160;&#160;&#160; <span class="pre">Name</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">functions</span> <span class="pre">contain</span> <span class="pre">the</span> <span class="pre">following:\n</span>&#160;&#160;&#160; <span class="pre">-</span> <span class="pre">calc_pdf:</span> <span class="pre">calculates</span> <span class="pre">the</span> <span class="pre">probability</span> <span class="pre">density</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">a</span> <span class="pre">given</span> <span class="pre">array\n</span>&#160;&#160;&#160; <span class="pre">-</span> <span class="pre">joint_pdf:</span> <span class="pre">calculates</span> <span class="pre">the</span> <span class="pre">joint</span> <span class="pre">probability</span> <span class="pre">density</span> <span class="pre">function</span> <span class="pre">of</span> <span class="pre">two</span> <span class="pre">given</span> <span class="pre">arrays\n</span>&#160;&#160;&#160; <span class="pre">-</span> <span class="pre">brazil_plot_with_threshold:</span> <span class="pre">plots</span> <span class="pre">the</span> <span class="pre">brazil</span> <span class="pre">plot</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">given</span> <span class="pre">data</span> <span class="pre">with</span> <span class="pre">thresholds\n</span>&#160;&#160;&#160; <span class="pre">-</span> <span class="pre">get_thresh:</span> <span class="pre">gets</span> <span class="pre">the</span> <span class="pre">threshold</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">given</span> <span class="pre">data\n</span>&#160;&#160;&#160; <span class="pre">-</span> <span class="pre">compute_rr:</span> <span class="pre">computes</span> <span class="pre">the</span> <span class="pre">threshold</span> <span class="pre">values</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">given</span> <span class="pre">data\n</span>&#160;&#160;&#160; <span class="pre">',</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.__init__&gt;,</span> <span class="pre">'compute_rr':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.compute_rr&gt;,</span> <span class="pre">'get_thresh':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.get_thresh&gt;,</span> <span class="pre">'brazil_plot_with_threshold':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.brazil_plot_with_threshold&gt;,</span> <span class="pre">'get_brzl_hist':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.get_brzl_hist&gt;,</span> <span class="pre">'brazil_plot_multiple':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.brazil_plot_multiple&gt;,</span> <span class="pre">'calc_pdf':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.calc_pdf&gt;,</span> <span class="pre">'joint_pdf':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.joint_pdf&gt;,</span> <span class="pre">'kde_plots':</span> <span class="pre">&lt;function</span> <span class="pre">hist_plots.kde_plots&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'hist_plots'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'hist_plots'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.__dict__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="arcanum.histogram_plots.hist_plots.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'arcanum.histogram_plots'</span></em><a class="headerlink" href="#arcanum.histogram_plots.hist_plots.__module__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="arcanum.hist_test.html" class="btn btn-neutral float-left" title="arcanum.hist_test module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="arcanum.html" class="btn btn-neutral float-right" title="arcanum package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright @ Ramiz Qudsi, 2024.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
