@@ -1,7 +1,122 @@
 class text_color:
     """
     A class that contains a bunch of functions to color the text in the terminal.
+
+    Functions:
+    ----------
+
+    red_text: str -> str
+        Returns the text in red color.
+
+    green_text: str -> str
+        Returns the text in green color.
+
+    yellow_text: str -> str
+        Returns the text in yellow color.
+
+    blue_text: str -> str
+        Returns the text in blue color.
+
+    magenta_text: str -> str
+        Returns the text in magenta color.
+
+    cyan_text: str -> str
+        Returns the text in cyan color.
+
+    white_text: str -> str
+        Returns the text in white color.
+
+    black_text: str -> str
+        Returns the text in black color.
+
+    aqua_text: str -> str
+        Returns the text in aqua color.
+
+    orange_text: str -> str
+        Returns the text in orange color.
+
+    purple_text: str -> str
+        Returns the text in purple color.
+
+    pink_text: str -> str
+        Returns the text in pink color.
+
+    grey_text: str -> str
+        Returns the text in grey color.
+
+    brown_text: str -> str
+        Returns the text in brown color.
+
+    turquoise_text: str -> str
+        Returns the text in turquoise color.
+
+    lime_text: str -> str
+        Returns the text in lime color.
+
+    bold_text: str -> str
+        Returns the text in bold.
+
+    underline_text: str -> str
+        Returns the text with underline.
+
+    blink_text: str -> str
+        Returns the text with blink.
+
+    reverse_text: str -> str
+        Returns the text with reverse.
+
+    invisible_text: str -> str
+        Returns the text with invisible.
+
+    strikethrough_text: str -> str
+        Returns the text with strikethrough.
+
+    double_underline_text: str -> str
+        Returns the text with double underline.
+
+    double_intensity_text: str -> str
+        Returns the text with double intensity.
+
+    Jupyter Notebook Usage:
+    -----------------------
+
+    .. jupyter-execute::
+
+        from arcanumpy.text_color_fnc import text_color
+
+        # Create a sample text to test the functions.
+        sample_text = "This is a sample text."
+
+        # Run the functions.
+        text_color = text_color()
+
+        print(text_color.red_text(sample_text))
+        print(text_color.green_text(sample_text))
+        print(text_color.yellow_text(sample_text))
+        print(text_color.blue_text(sample_text))
+        print(text_color.magenta_text(sample_text))
+        print(text_color.cyan_text(sample_text))
+        print(text_color.white_text(sample_text))
+        print(text_color.black_text(sample_text))
+        print(text_color.aqua_text(sample_text))
+        print(text_color.orange_text(sample_text))
+        print(text_color.purple_text(sample_text))
+        print(text_color.pink_text(sample_text))
+        print(text_color.grey_text(sample_text))
+        print(text_color.brown_text(sample_text))
+        print(text_color.turquoise_text(sample_text))
+        print(text_color.lime_text(sample_text))
+        print(text_color.bold_text(sample_text))
+        print(text_color.underline_text(sample_text))
+        print(text_color.blink_text(sample_text))
+        print(text_color.reverse_text(sample_text))
+        print(text_color.invisible_text(sample_text))
+        print(text_color.strikethrough_text(sample_text))
+        print(text_color.double_underline_text(sample_text))
+        print(text_color.double_intensity_text(sample_text))
+
     """
+
     def red_text(self, text):
         return "\033[91m{}\033[00m".format(text)
 
