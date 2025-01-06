@@ -44,9 +44,9 @@ Installation
 Functions
 =========
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   Functions <modules>
+   Functions <functions>
 
 Citation and Acknowledgements
 =============================

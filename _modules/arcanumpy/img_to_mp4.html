@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>arcanumpy.SeabornFig2Grid &mdash; ArcanumPy  documentation</title>
+  <title>arcanumpy.img_to_mp4 &mdash; ArcanumPy  documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css?v=572af1d6" />
@@ -16,7 +16,7 @@
 
   
     <link rel="shortcut icon" href="../../_static/arcanumpy_logo.png"/>
-    <link rel="canonical" href="https://qudsiramiz.space/arcanumpy/_modules/arcanumpy/SeabornFig2Grid.html" />
+    <link rel="canonical" href="https://qudsiramiz.space/arcanumpy/_modules/arcanumpy/img_to_mp4.html" />
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
@@ -245,7 +245,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
-      <li class="breadcrumb-item active">arcanumpy.SeabornFig2Grid</li>
+      <li class="breadcrumb-item active">arcanumpy.img_to_mp4</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -254,71 +254,134 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for arcanumpy.SeabornFig2Grid</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gridspec</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+  <h1>Source code for arcanumpy.img_to_mp4</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">imageio</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">iio</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 
-<div class="viewcode-block" id="SeabornFig2Grid">
-<a class="viewcode-back" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid">[docs]</a>
-<span class="k">class</span><span class="w"> </span><span class="nc">SeabornFig2Grid</span><span class="p">():</span>
+<div class="viewcode-block" id="gif_maker">
+<a class="viewcode-back" href="../../rst_files/arcanumpy.img_to_mp4.html#arcanumpy.img_to_mp4.gif_maker">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">gif_maker</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">vid_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">skip_rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">vid_type</span><span class="o">=</span><span class="s2">&quot;mp4&quot;</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make a gif from a list of images.</span>
 
-<div class="viewcode-block" id="SeabornFig2Grid.__init__">
-<a class="viewcode-back" href="../../rst_files/arcanumpy.SeabornFig2Grid.html#arcanumpy.SeabornFig2Grid.SeabornFig2Grid.__init__">[docs]</a>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seaborngrid</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">subplot_spec</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span> <span class="o">=</span> <span class="n">fig</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sg</span> <span class="o">=</span> <span class="n">seaborngrid</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">subplot</span> <span class="o">=</span> <span class="n">subplot_spec</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="p">,</span> <span class="n">sns</span><span class="o">.</span><span class="n">axisgrid</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">)</span> <span class="ow">or</span> \
-           <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="p">,</span> <span class="n">sns</span><span class="o">.</span><span class="n">axisgrid</span><span class="o">.</span><span class="n">PairGrid</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_movegrid</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="p">,</span> <span class="n">sns</span><span class="o">.</span><span class="n">axisgrid</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_movejointgrid</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_finalize</span><span class="p">()</span></div>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    file_list : list</span>
+<span class="sd">        List of image files.</span>
+<span class="sd">    vid_name : str</span>
+<span class="sd">        Name of the gif file.</span>
+<span class="sd">    mode : str, optional</span>
+<span class="sd">        Mode of the gif. The default is &quot;I&quot;.</span>
+<span class="sd">    skip_rate : int, optional</span>
+<span class="sd">        Skip rate of the gif. The default is 10.</span>
+<span class="sd">    vid_type : str, optional</span>
+<span class="sd">        Type of the video. The default is &quot;mp4&quot;.</span>
+<span class="sd">    duration : float, optional</span>
+<span class="sd">        Duration for which each image is displayed in gif. The default is 0.05.</span>
+<span class="sd">    fps : int, optional</span>
+<span class="sd">        Frames per second for mp4 video. The default is 25.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the skip_rate is not an integer.</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the duration is not a float.</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If the file_list is empty.</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If vid_name is empty.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">file_list</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;file_list is None&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vid_name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;vid_name is None. Please provide the name of the gif/video&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;file_list is empty&quot;</span><span class="p">)</span>
+    <span class="c1"># if len(file_list) &gt;= 1501:</span>
+    <span class="c1">#     # Check if the skip_rate is an integer</span>
+    <span class="c1">#     if skip_rate != int(skip_rate):</span>
+    <span class="c1">#         raise ValueError(&quot;skip_rate must be an integer&quot;)</span>
+    <span class="c1">#     file_list = file_list[-1500::skip_rate]</span>
+    <span class="k">if</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;gif&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">duration</span> <span class="o">!=</span> <span class="nb">float</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;duration must be a float&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;mp4&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">fps</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">fps</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Frame rate (fps) must be an integer&quot;</span><span class="p">)</span>
+
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;gif&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">iio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">vid_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing image </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">image</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;mp4&quot;</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">iio</span><span class="o">.</span><span class="n">get_writer</span><span class="p">(</span><span class="n">vid_name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">file_list</span><span class="p">:</span>
+                <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing image </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2"> of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">file_list</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">img</span> <span class="o">=</span> <span class="n">iio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+                <span class="n">writer</span><span class="o">.</span><span class="n">append_data</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vid_name</span><span class="si">}</span><span class="s2"> is created</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span></div>
 
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_movegrid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Move PairGrid or Facetgrid &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">()</span>
-        <span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpecFromSubplotSpec</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">subplot_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">subplot</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_moveaxes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_movejointgrid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot; Move Jointgrid &quot;&quot;&quot;</span>
-        <span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">height</span>
-        <span class="n">h2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">ax_marg_x</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">height</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">h</span> <span class="o">/</span> <span class="n">h2</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpecFromSubplotSpec</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">subplot_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">subplot</span><span class="p">)</span>
+<div class="viewcode-block" id="make_gifs">
+<a class="viewcode-back" href="../../rst_files/arcanumpy.img_to_mp4.html#arcanumpy.img_to_mp4.make_gifs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">make_gifs</span><span class="p">(</span><span class="n">number_of_days</span><span class="o">=</span><span class="mi">120</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make gifs for the last n days. Default is 120 days, averaged over the last 30 days.</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">_moveaxes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">ax_joint</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_moveaxes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">ax_marg_x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_moveaxes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">ax_marg_y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">subgrid</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    number_of_days : int, optional</span>
+<span class="sd">        Number of days to be considered for plotting the gif. The default is 120.</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_moveaxes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">gs</span><span class="p">):</span>
-        <span class="c1"># https://stackoverflow.com/a/46906599/4124317</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">figure</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">_subplotspec</span> <span class="o">=</span> <span class="n">gs</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="n">gs</span><span class="o">.</span><span class="n">get_position</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="p">))</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_subplotspec</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">        None.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">number_of_days</span> <span class="o">=</span> <span class="n">number_of_days</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">30</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">fig</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s2">&quot;resize_event&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_resize</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+    <span class="n">vid_type</span> <span class="o">=</span> <span class="s2">&quot;gif&quot;</span>  <span class="c1"># &quot;gif&quot; or &quot;mp4&quot;</span>
+    <span class="k">if</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;gif&quot;</span><span class="p">:</span>
+        <span class="n">gif_path</span> <span class="o">=</span> <span class="s2">&quot;/home/cephadrius/Pictures/Screenshots/Screenshots/SA/&quot;</span>
+    <span class="k">elif</span> <span class="n">vid_type</span> <span class="o">==</span> <span class="s2">&quot;mp4&quot;</span><span class="p">:</span>
+        <span class="n">gif_path</span> <span class="o">=</span> <span class="s2">&quot;/home/cephadrius/Pictures/Screenshots/Screenshots/SA/&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code execution started at (UTC):&quot;</span> <span class="o">+</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">utcfromtimestamp</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span><span class="w"> </span><span class="nf">_resize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">evt</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sg</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">get_size_inches</span><span class="p">())</span></div>
+    <span class="n">file_list_dict</span> <span class="o">=</span> <span class="p">{}</span>
 
+    <span class="n">file_list_dict</span><span class="p">[</span><span class="s2">&quot;file_list_30days&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;/home/cephadrius/Pictures/Screenshots/Screenshots/SA/*.png&quot;</span><span class="p">))[:]</span>
+
+    <span class="n">skip_rate_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">key</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">file_list_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
+        <span class="c1"># vid_name = f&quot;{gif_path}{key}.{vid_type}&quot;</span>
+        <span class="n">vid_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gif_path</span><span class="si">}</span><span class="s2">DSCOVR_30days_hourly_averaged.</span><span class="si">{</span><span class="n">vid_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">gif_maker</span><span class="p">(</span><span class="n">file_list_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">vid_name</span><span class="p">,</span> <span class="n">vid_type</span><span class="o">=</span><span class="n">vid_type</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="n">skip_rate</span><span class="o">=</span><span class="n">skip_rate_list</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">pass</span></div>
+
+
+
+<span class="n">make_gifs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
            </div>
