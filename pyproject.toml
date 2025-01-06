@@ -16,6 +16,10 @@ scikit-learn = "^1.4.0"
 seaborn = "^0.13.2"
 cdflib = "^1.3.2"
 
+# Explicitly define the location of the source package
+packages = [
+    { include = "arcanum", from = "arcanum" }
+]
 
 [build-system]
 requires = ["poetry-core"]
