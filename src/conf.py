@@ -36,7 +36,7 @@ def get_git_versions():
         return ["latest", "main"]  # Fallback versions
 
 
-versions = get_git_versions()
+# versions = get_git_versions()
 
 # -- Project information -----------------------------------------------------
 project = "ArcanumPy"

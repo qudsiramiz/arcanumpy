@@ -9,16 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git configuration
-        run: |
-          # Ensure the 'origin' remote is set correctly
-          if ! git remote get-url origin; then
-            git remote add origin https://github.com/qudsiramiz/arcanumpy.git
-          fi
-          
-          git config user.name "qudsiramiz"
-          git config user.email "qudsiramiz@users.noreply.github.com"
-
       - name: Create a commit and push
         run: |
           git add --all
