@@ -43,7 +43,7 @@ def kde_plots(
     clabelsize = 20
     ticklength = 15
 
-    # Remove all occurances of delta_beta where delta_beta is less than 0
+    # When plotting on a log scale, remove rows where x <= 0 or y <= 0
     if log_scale:
         df = df[df[x] > 0]
         df = df[df[y] > 0]
