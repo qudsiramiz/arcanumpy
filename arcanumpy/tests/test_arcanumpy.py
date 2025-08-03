@@ -1,34 +1,27 @@
-# Test file for arcanumpy
-#
+from __future__ import annotations
 
-import os
-import sys
-import unittest
-from unittest.mock import patch
-from arcanumpy import arcanumpy
+import importlib.util
+from pathlib import Path
 
 
-def test_update_modules_rst_file_cosmere():
-    source_dir = "/home/cephadrius/Desktop/git/arcanumpy/src/rst_files"
-    output_dir = "/home/cephadrius/Desktop/git/arcanumpy/src/"
-    output_module_file = os.path.join(output_dir, "functions.rst")
+def _load_update_module() -> object:
+    repo_root = Path(__file__).resolve().parents[2]
+    module_path = repo_root / "src" / "update_modules_rst_file_cosmere.py"
+    spec = importlib.util.spec_from_file_location("update_modules_rst_file_cosmere", module_path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)  # type: ignore[attr-defined]
+    return module
 
-    rst_files = [
-        f for f in os.listdir(source_dir) if f.endswith(".rst") and f != "functions.rst"
-    ]
 
-    with open(output_module_file, "w") as module_file:
-        module_file.write("=========\n")
-        module_file.write("Functions\n")
-        module_file.write("=========\n\n")
-        module_file.write(".. toctree::\n")
-        module_file.write("   :maxdepth: 3\n\n")
-        for rst in sorted(rst_files):
-            module_name = os.path.splitext(rst)[0]
+def test_update_modules_rst_file_cosmere(tmp_path):
+    module = _load_update_module()
+    repo_root = Path(__file__).resolve().parents[2]
+    source_dir = repo_root / "src" / "rst_files"
 
-            module_file.write(f"   {module_name} <./rst_files/{module_name}.rst>\n")
+    output_file = module.update_functions_rst_file(source_dir, tmp_path)
 
-            module_name = os.path.splitext(rst)[0]
-            module_rst_path = os.path.join(source_dir, rst)
-
-    assert os.path.exists(output_module_file)
+    assert output_file.exists()
+    content = output_file.read_text()
+    assert "Functions" in content
+    assert "arcanumpy.arcanumpy" in content
