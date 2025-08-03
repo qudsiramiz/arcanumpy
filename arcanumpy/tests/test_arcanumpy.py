@@ -36,4 +36,3 @@ def test_update_modules_rst_file_cosmere(tmp_path, monkeypatch):
     content = output_file.read_text()
     assert "alpha <./rst_files/alpha.rst>" in content
     assert "beta <./rst_files/beta.rst>" in content
-
