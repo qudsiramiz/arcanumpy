@@ -318,7 +318,7 @@
     <span class="n">clabelsize</span> <span class="o">=</span> <span class="mi">20</span>
     <span class="n">ticklength</span> <span class="o">=</span> <span class="mi">15</span>
 
-    <span class="c1"># Remove all occurances of delta_beta where delta_beta is less than 0</span>
+    <span class="c1"># When plotting on a log scale, remove rows where x &lt;= 0 or y &lt;= 0</span>
     <span class="k">if</span> <span class="n">log_scale</span><span class="p">:</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">y</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
