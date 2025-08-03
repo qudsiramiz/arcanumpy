@@ -271,42 +271,35 @@
            <div itemprop="articleBody">
              
   <h1>Source code for arcanumpy.tests.test_arcanumpy</h1><div class="highlight"><pre>
-<span></span><span class="c1"># Test file for arcanumpy</span>
-<span class="c1">#</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">unittest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">unittest.mock</span><span class="w"> </span><span class="kn">import</span> <span class="n">patch</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">arcanumpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">arcanumpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib.util</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_load_update_module</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+    <span class="n">repo_root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">module_path</span> <span class="o">=</span> <span class="n">repo_root</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="s2">&quot;update_modules_rst_file_cosmere.py&quot;</span>
+    <span class="n">spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">spec_from_file_location</span><span class="p">(</span><span class="s2">&quot;update_modules_rst_file_cosmere&quot;</span><span class="p">,</span> <span class="n">module_path</span><span class="p">)</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">module_from_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">spec</span><span class="o">.</span><span class="n">loader</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="n">spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="k">return</span> <span class="n">module</span>
 
 
 <div class="viewcode-block" id="test_update_modules_rst_file_cosmere">
 <a class="viewcode-back" href="../../../rst_files/arcanumpy.tests.test_arcanumpy.html#arcanumpy.tests.test_arcanumpy.test_update_modules_rst_file_cosmere">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">test_update_modules_rst_file_cosmere</span><span class="p">():</span>
-    <span class="n">source_dir</span> <span class="o">=</span> <span class="s2">&quot;/home/cephadrius/Desktop/git/arcanumpy/src/rst_files&quot;</span>
-    <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">&quot;/home/cephadrius/Desktop/git/arcanumpy/src/&quot;</span>
-    <span class="n">output_module_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="s2">&quot;functions.rst&quot;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_update_modules_rst_file_cosmere</span><span class="p">(</span><span class="n">tmp_path</span><span class="p">):</span>
+    <span class="n">module</span> <span class="o">=</span> <span class="n">_load_update_module</span><span class="p">()</span>
+    <span class="n">repo_root</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">source_dir</span> <span class="o">=</span> <span class="n">repo_root</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="s2">&quot;rst_files&quot;</span>
 
-    <span class="n">rst_files</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.rst&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">f</span> <span class="o">!=</span> <span class="s2">&quot;functions.rst&quot;</span>
-    <span class="p">]</span>
+    <span class="n">output_file</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">update_functions_rst_file</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">tmp_path</span><span class="p">)</span>
 
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_module_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">module_file</span><span class="p">:</span>
-        <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;=========</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Functions</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;=========</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;.. toctree::</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;   :maxdepth: 3</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">rst</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">rst_files</span><span class="p">):</span>
-            <span class="n">module_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">rst</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-
-            <span class="n">module_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2"> &lt;./rst_files/</span><span class="si">{</span><span class="n">module_name</span><span class="si">}</span><span class="s2">.rst&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-
-            <span class="n">module_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">rst</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="n">module_rst_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_dir</span><span class="p">,</span> <span class="n">rst</span><span class="p">)</span>
-
-    <span class="k">assert</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">output_module_file</span><span class="p">)</span></div>
+    <span class="k">assert</span> <span class="n">output_file</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">output_file</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="s2">&quot;Functions&quot;</span> <span class="ow">in</span> <span class="n">content</span>
+    <span class="k">assert</span> <span class="s2">&quot;arcanumpy.arcanumpy&quot;</span> <span class="ow">in</span> <span class="n">content</span></div>
 
 </pre></div>
 
