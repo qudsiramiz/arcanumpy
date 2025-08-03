@@ -43,7 +43,7 @@ def kde_plots(
     clabelsize = 20
     ticklength = 15
 
-    # Remove all occurances of delta_beta where delta_beta is less than 0
+    # When plotting on a log scale, remove rows where x <= 0 or y <= 0
     if log_scale:
         df = df[df[x] > 0]
         df = df[df[y] > 0]
@@ -56,7 +56,7 @@ def kde_plots(
         axs1.plot_joint(sns.scatterplot, s=marker_size, alpha=alpha, color=color)
 
     # If var_marker_size is true, then make a concentric circle to show the size of the data points.
-    # Make srue that the circles do not have a facecolor
+    # Make sure that the circles do not have a facecolor
     if var_marker_size:
         radii_min = np.sqrt(np.nanmin(marker_size) / 3)
         radii_max = np.sqrt(np.nanmax(marker_size) / 3)

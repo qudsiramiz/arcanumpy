@@ -139,7 +139,8 @@ class get_files_from_web:
                     ):
                         continue
                     else:
-                        file_list.append(updated_filename)
+                        # Store tuple of year and filename for later use
+                        file_list.append((year, updated_filename))
 
         # Download the files in the file list to the data/ephemeris directory
         if data_dir is None:
@@ -154,7 +155,7 @@ class get_files_from_web:
         # Download the files in the file list to the data/ephemeris directory
         if not verbose:
             print("Downloading ephemeris files\n")
-        for file in file_list:
+        for year, file in file_list:
             # If the file already exists, then skip to the next file
             if (data_dir / file).exists():
                 if verbose:
@@ -162,7 +163,7 @@ class get_files_from_web:
                         f"File \033[92m {file}\033[0m already exists in folder \033[92m {data_dir}\033[0m \n"
                     )
                 continue
-            # If the file doesn't exist, then download it
+            # If the file doesn't exist, then download it using the stored year
             urllib.request.urlretrieve(
                 CDA_LINK + f"{str(year)}/" + file, data_dir / file
             )
